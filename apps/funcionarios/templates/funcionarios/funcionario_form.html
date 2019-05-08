@@ -1,0 +1,403 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% load widget_tweaks %}
+
+{% block title %}Cadastro de Funcionários{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cadastro de Funcionários</h5>
+
+          <form method="post" enctype="multipart/form-data">
+            <!-- Não se esqueça dessa tag -->
+            {% csrf_token %}
+
+            <!-- CPF -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">CPF</span>
+              </div>
+              {% render_field form.cpf class+="form-control" %}
+            </div>
+
+            <!-- Nome -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nome</span>
+              </div>
+              {% render_field form.nome class+="form-control" %}
+            </div>
+
+            <!-- nascimento -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Data Nascimento</span>
+              </div>
+              {% render_field form.data_nasc class+="form-control" %}
+
+              <!-- sexo -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Sexo</span>
+              </div>
+              {% render_field form.sexo class+="form-control" %}
+
+              <!-- estado_civil -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Estado Civil</span>
+              </div>
+              {% render_field form.estado_civil class+="form-control" %}
+            </div>
+
+            <!-- Nacionalidade -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nacionalidade</span>
+              </div>
+              {% render_field form.nacionalidade class+="form-control" %}
+
+             <!-- Naturalidade -->
+             <div class="input-group-prepend">
+                <span class="input-group-text">Naturalidade</span>
+              </div>
+              {% render_field form.naturalidade class+="form-control" %}
+            </div>
+
+            <!-- nome_conjuge -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nome Cônjuge</span>
+              </div>
+              {% render_field form.nome_conjuge class+="form-control" %}
+
+             <!-- num_dependentes -->
+             <div class="input-group-prepend">
+                <span class="input-group-text">Qtd Dependentes</span>
+              </div>
+              {% render_field form.num_dependentes class+="form-control" %}
+            </div>
+
+            <!-- nome_pai -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nome do Pai</span>
+              </div>
+              {% render_field form.nome_pai class+="form-control" %}
+
+             <!-- nome_mae -->
+             <div class="input-group-prepend">
+                <span class="input-group-text">Nome da mae</span>
+              </div>
+              {% render_field form.nome_mae class+="form-control" %}
+            </div>
+
+             <!-- endereco -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Endereço</span>
+              </div>
+              {% render_field form.endereco class+="form-control" %}
+            </div>
+
+            <!-- numero -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Núumero</span>
+              </div>
+              {% render_field form.numero class+="form-control" %}
+
+
+            <!-- complemento -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Complemento</span>
+              </div>
+              {% render_field form.complemento class+="form-control" %}
+            </div>
+
+            <div class="input-group mb-3">
+              <!-- bairro -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Bairro</span>
+              </div>
+              {% render_field form.bairro class+="form-control" %}
+
+              <!-- cidade -->
+
+              <div class="input-group-prepend">
+                <span class="input-group-text">Cidade</span>
+              </div>
+              {% render_field form.cidade class+="form-control" %}
+
+            </div>
+            <div class="input-group mb-3">
+              <!-- uf -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">UF</span>
+              </div>
+              {% render_field form.uf class+="form-control" %}
+
+
+            <!-- CEP -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">CEP</span>
+              </div>
+              {% render_field form.cep class+="form-control" %}
+            </div>
+
+            <!-- telefones -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Telefones</span>
+              </div>
+              {% render_field form.telefone class+="form-control" %}
+
+            <!-- celular -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Celular</span>
+              </div>
+              {% render_field form.celular class+="form-control" %}
+
+            </div>
+            <!-- email -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">email</span>
+              </div>
+              {% render_field form.email class+="form-control" %}
+            </div>
+
+            <!-- rg -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">RG</span>
+              </div>
+              {% render_field form.rg class+="form-control" %}
+
+              <!-- orgao -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Órgão</span>
+              </div>
+              {% render_field form.orgao class+="form-control" %}
+
+              <!-- data_emissao -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Data Emissao</span>
+              </div>
+              {% render_field form.data_emissao class+="form-control" %}
+            </div>
+
+            <!-- cnh -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">CNH</span>
+              </div>
+              {% render_field form.cnh class+="form-control" %}
+
+              <!-- cert_militar -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Cert. Militar</span>
+              </div>
+              {% render_field form.cert_militar class+="form-control" %}
+            </div>
+
+              <!-- ctps -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">CTPS</span>
+              </div>
+              {% render_field form.ctps class+="form-control" %}
+
+              <!-- ctps_rural -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">CTPS Rural</span>
+              </div>
+              {% render_field form.ctps_rural class+="form-control" %}
+            </div>
+
+            <!-- pis -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">PIS</span>
+              </div>
+              {% render_field form.pis class+="form-control" %}
+
+              <!-- data_pis -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Data PIS</span>
+              </div>
+              {% render_field form.data_pis class+="form-control" %}
+            </div>
+
+            <!-- banco_pis -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Banco do PIS</span>
+              </div>
+              {% render_field form.banco_pis class+="form-control" %}
+
+              <!-- ag_pis -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Agência PIS</span>
+              </div>
+              {% render_field form.ag_pis class+="form-control" %}
+            </div>
+
+            <!-- titulo -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">TÍtulo</span>
+              </div>
+              {% render_field form.titulo class+="form-control" %}
+
+              <!-- zona -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">zona</span>
+              </div>
+              {% render_field form.zona class+="form-control" %}
+
+              <!-- secao -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Seção</span>
+              </div>
+              {% render_field form.secao class+="form-control" %}
+            </div>
+
+            <!-- contato1 -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Contato 1</span>
+              </div>
+              {% render_field form.contato1 class+="form-control" %}
+
+              <!-- tel_contato1 -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Telefone</span>
+              </div>
+              {% render_field form.tel_contato1 class+="form-control" %}
+            </div>
+
+            <!-- contato2 -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Contato 2</span>
+              </div>
+              {% render_field form.contato2 class+="form-control" %}
+
+              <!-- tel_contato1 -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Telefone</span>
+              </div>
+              {% render_field form.tel_contato2 class+="form-control" %}
+            </div>
+
+            <!-- estrangeiro -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Estrangeiro</span>
+              </div>
+              {% render_field form.estrangeiro class+="form-control" %}
+
+              <!-- casado_bras -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Casado com Bras.</span>
+              </div>
+              {% render_field form.casado_bras class+="form-control" %}
+
+              <!-- data_chegada -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Data Chegada</span>
+              </div>
+              {% render_field form.secao class+="form-control" %}
+            </div>
+
+            <!-- tem_filhos_bras -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Tem filhos bras.</span>
+              </div>
+              {% render_field form.tem_filhos_bras class+="form-control" %}
+
+              <!-- qtd_filhos_bras -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Qtd filhos bras</span>
+              </div>
+              {% render_field form.qtd_filhos_bras class+="form-control" %}
+            </div>
+
+            <!-- naturalizado -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Naturalizado</span>
+              </div>
+              {% render_field form.naturalizado class+="form-control" %}
+
+              <!-- num_decreto -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Num. Decreto</span>
+              </div>
+              {% render_field form.num_decreto class+="form-control" %}
+            </div>
+
+            <!-- salario -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Salário</span>
+              </div>
+              {% render_field form.salario class+="form-control" %}
+
+              <!-- data_admissao -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Data Admissão</span>
+              </div>
+              {% render_field form.data_admissao class+="form-control" %}
+            </div>
+
+            <!-- funcao -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">função</span>
+              </div>
+              {% render_field form.funcao class+="form-control" %}
+
+              <!-- cbo -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">CBO</span>
+              </div>
+              {% render_field form.cbo class+="form-control" %}
+            </div>
+
+            <!-- departamentos -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Departamento</span>
+              </div>
+              {% render_field form.departamentos class+="form-control" %}
+            </div>
+
+             <!-- empresa -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Empresa</span>
+              </div>
+              {% render_field form.empresa class+="form-control" %}
+            </div>
+
+            <!-- foto -->
+
+              <div class="input-group-prepend">
+                <span class="input-group-text">Foto</span>
+              </div>
+              {% render_field form.foto class+="form-control" %}
+
+
+            <button class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

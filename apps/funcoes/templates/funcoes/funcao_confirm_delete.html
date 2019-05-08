@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} funções {% endblock %}
+
+{% block main %}
+
+    <h2>Tem certeza que deseja deletar a Função "{{ funcao.nome }}"?</h2>
+    <form method="POST" ENCTYPE="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+{% endblock %}
+

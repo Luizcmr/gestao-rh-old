@@ -1,0 +1,49 @@
+{% load static%}
+{% load bootstrap %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'stick-footer.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Pagina de login</title>
+
+</head>
+<body>
+    <br>
+    <div class="container">
+        <h2>Acesso ao Sistema</h2>
+        <div class="jumbotron">
+            <form method="post">
+              <div class="col-6">
+                {% csrf_token %}
+                {{ form|bootstrap }}
+                <button type="submit" class="btn btn-info">Login</button>
+              </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<footer class="footer">
+     <div class="container">
+         <span class="text-muted">Desenvolvimento Web - Ponto Sys</span>
+     </div>
+</footer>
+

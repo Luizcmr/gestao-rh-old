@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Funcionarios {% endblock %}
+
+{% block main %}
+
+    <h2>Tem certeza que deseja excluir o Funcionário - {{ funcionario.nome }}?</h2>
+    <form method="POST" ENCTYPE="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+{% endblock %}
+

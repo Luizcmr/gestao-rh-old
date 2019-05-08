@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% load widget_tweaks %}
+
+{% block title %}Cadastro de Empresas{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cadastro de Empresas</h5>
+
+          <form method="post">
+            <!-- Não se esqueça dessa tag -->
+            {% csrf_token %}
+
+            <!-- CNPJ -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">CNPJ</span>
+              </div>
+              {% render_field form.cnpj class+="form-control" %}
+            </div>
+
+            <!-- Nome -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nome</span>
+              </div>
+              {% render_field form.nome class+="form-control" %}
+            </div>
+
+            <!-- Fantasia -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Fantasia</span>
+              </div>
+              {% render_field form.fantasia class+="form-control" %}
+            </div>
+
+            <!-- insc_est -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Insc. Estadual</span>
+              </div>
+              {% render_field form.insc_est class+="form-control" %}
+
+             <!-- insc_mun -->
+             <div class="input-group-prepend">
+                <span class="input-group-text">Insc. Municipal</span>
+              </div>
+              {% render_field form.insc_mun class+="form-control" %}
+            </div>
+
+             <!-- endereco -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Endereço</span>
+              </div>
+              {% render_field form.endereco class+="form-control" %}
+            </div>
+
+            <!-- numero -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Núumero</span>
+              </div>
+              {% render_field form.numero class+="form-control" %}
+
+
+            <!-- complemento -->
+
+              <div class="input-group-prepend">
+                <span class="input-group-text">Complemento</span>
+              </div>
+              {% render_field form.complemento class+="form-control" %}
+            </div>
+
+
+
+            <div class="input-group mb-3">
+              <!-- bairro -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Bairro</span>
+              </div>
+              {% render_field form.bairro class+="form-control" %}
+
+              <!-- cidade -->
+
+              <div class="input-group-prepend">
+                <span class="input-group-text">Cidade</span>
+              </div>
+              {% render_field form.cidade class+="form-control" %}
+
+            </div>
+            <div class="input-group mb-3">
+              <!-- uf -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">UF</span>
+              </div>
+              {% render_field form.uf class+="form-control" %}
+
+
+            <!-- CEP -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">CEP</span>
+              </div>
+              {% render_field form.cep class+="form-control" %}
+            </div>
+
+            <!-- telefones -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Telefones</span>
+              </div>
+              {% render_field form.telefones class+="form-control" %}
+            </div>
+
+            <!-- email -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">email</span>
+              </div>
+              {% render_field form.email class+="form-control" %}
+            </div>
+
+
+            <button class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
