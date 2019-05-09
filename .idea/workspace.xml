@@ -2,7 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94d9c5b0-5a3c-4afe-9d2d-ff25f000582f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements-dev.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/decouple.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_database_url-0.5.0.dist-info/DESCRIPTION.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_database_url-0.5.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_database_url-0.5.0.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_database_url-0.5.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_database_url-0.5.0.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_database_url-0.5.0.dist-info/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_database_url-0.5.0.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_database_url.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_static-0.0.6-py3.7.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_static-0.0.6-py3.7.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_static-0.0.6-py3.7.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_static-0.0.6-py3.7.egg-info/installed-files.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_static-0.0.6-py3.7.egg-info/not-zip-safe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_static-0.0.6-py3.7.egg-info/requires.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_static-0.0.6-py3.7.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dj_static.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2-2.8.2.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2-2.8.2.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2-2.8.2.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2-2.8.2.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2-2.8.2.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2-2.8.2.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/_ipaddress.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/_json.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/_lru_cache.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/_psycopg.cp37-win32.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/_range.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/compat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/errorcodes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/errors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/extensions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/extras.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/pool.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/sql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/tz.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/python_decouple-3.1-py3.7.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/python_decouple-3.1-py3.7.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/python_decouple-3.1-py3.7.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/python_decouple-3.1-py3.7.egg-info/installed-files.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/python_decouple-3.1-py3.7.egg-info/not-zip-safe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/python_decouple-3.1-py3.7.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/static.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/static3-0.7.0-py3.7.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/static3-0.7.0-py3.7.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/static3-0.7.0-py3.7.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/static3-0.7.0-py3.7.egg-info/entry_points.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/static3-0.7.0-py3.7.egg-info/installed-files.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/static3-0.7.0-py3.7.egg-info/pbr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/static3-0.7.0-py3.7.egg-info/requires.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/static3-0.7.0-py3.7.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Scripts/static-script.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Scripts/static.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Scripts/static.exe.manifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestao_rh/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gestao_rh/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestao_rh/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/gestao_rh/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +79,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gestao_rh/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="e#308#317#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,7 +140,6 @@
         <option value="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_list.html" />
         <option value="$PROJECT_DIR$/apps/departamentos/templates/departamentos/departamento_confirm_delete.html" />
         <option value="$PROJECT_DIR$/apps/departamentos/urls.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_confirm_delete.html" />
         <option value="$PROJECT_DIR$/apps/departamentos/templates/departamentos/departamento_form.html" />
         <option value="$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_form.html" />
@@ -76,7 +149,6 @@
         <option value="$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_confirm_delete.html" />
         <option value="$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_list.html" />
         <option value="$PROJECT_DIR$/apps/funcoes/views.py" />
-        <option value="$PROJECT_DIR$/gestao_rh/settings.py" />
         <option value="$PROJECT_DIR$/gestao_rh/urls.py" />
         <option value="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_list.html" />
         <option value="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_confirm_delete.html" />
@@ -92,6 +164,13 @@
         <option value="$PROJECT_DIR$/apps/core/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/apps/core/templates/core/index.html" />
         <option value="$PROJECT_DIR$/gitignore" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/gestao_rh/wsgi.py" />
+        <option value="$PROJECT_DIR$/requirements-dev.txt" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/runtime.txt" />
+        <option value="$PROJECT_DIR$/gestao_rh/settings.py" />
       </list>
     </option>
   </component>
@@ -119,12 +198,36 @@
             <path>
               <item name="gestao_rh" type="b2602c69:ProjectViewProjectNode" />
               <item name="gestao_rh" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestao_rh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestao_rh" type="462c0819:PsiDirectoryNode" />
               <item name="gestao_rh" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gestao_rh" type="b2602c69:ProjectViewProjectNode" />
               <item name="gestao_rh" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestao_rh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestao_rh" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestao_rh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestao_rh" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestao_rh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestao_rh" type="462c0819:PsiDirectoryNode" />
+              <item name="manage.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="gestao_rh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -136,7 +239,15 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="gestao_rh" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="gestao_rh" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -393,8 +504,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22619048" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22991072" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -405,7 +517,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49925596" visible="true" weight="0.30769232" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49925596" visible="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50074404" side_tool="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -448,22 +560,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/empresas/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionarios/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/empresas/templates/empresas/empresas_form.html" />
-    <entry file="file://$PROJECT_DIR$/apps/empresas/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/empresas/migrations/0003_auto_20190423_1957.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/empresas/migrations/0002_empresa_cnpj.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/empresas/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -514,13 +610,6 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -752,13 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gestao_rh/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="132" column="20" selection-start-line="132" selection-start-column="20" selection-end-line="132" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/departamentos/templates/departamentos/departamento_list.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -800,6 +882,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6681">
           <caret line="393" selection-start-line="393" selection-end-line="393" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gestao_rh/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#225#234#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements-dev.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gestao_rh/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#308#317#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

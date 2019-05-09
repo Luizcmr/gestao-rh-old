@@ -1,7 +1,6 @@
-Django==2.2
-django-bootstrap-form==3.4
-django-widget-tweaks==1.4.3
-pytz==2019.1
+-r requirements-dev.txt
+gunicorn
+psycopg2==2.8.2
 
 
 
