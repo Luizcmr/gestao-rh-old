@@ -20,9 +20,11 @@ class FuncionarioCreate(CreateView):
 
     def form_valid(self, form):
         obj = form.save()
-        funcionario = self.request.user.funcionario
-        funcionario.funcionario = obj
-        funcionario.save()
+
+        # gravando usuário no cadastro de funcionario
+        # funcionario = self.request.user.funcionario
+        # funcionario.funcionario = obj
+        # funcionario.save()
         return redirect('lista_funcionarios')
 
 

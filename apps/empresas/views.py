@@ -13,9 +13,11 @@ class EmpresaCreate(CreateView):
 
     def form_valid(self, form):
         obj = form.save()
-        funcionario = self.request.user.funcionario
-        funcionario.empresa = obj
-        funcionario.save()
+
+        # gravando a empresa no funcionario que corresponde ao usuário
+        # funcionario = self.request.user.funcionario
+        # funcionario.empresa = obj
+        # funcionario.save()
         return redirect('lista_empresas')
 
 
