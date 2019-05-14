@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
+{% load static%}
 {% load bootstrap %}
 {% load widget_tweaks %}
-
+<head>
+   <script language="JavaScript" type="text/javascript" src="{% static 'bootstrap/js/MascaraValidacao.js' %}"></script>
+</head>
 {% block title %}Cadastro de Funcionários{% endblock %}
 
 {% block main %}
@@ -12,16 +15,21 @@
         <div class="card-body">
           <h5 class="card-title">Cadastro de Funcionários</h5>
 
-          <form method="post" enctype="multipart/form-data">
+          <form name="form1" method="post" enctype="multipart/form-data">
             <!-- Não se esqueça dessa tag -->
             {% csrf_token %}
-
+            <img src="{{ funcionario.foto.url }}" height="100" width="100">
+            <p></p>
             <!-- CPF -->
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text">CPF</span>
               </div>
-              {% render_field form.cpf class+="form-control" %}
+              <input type="text" name="cpf" class="form-control" value="{{ funcionario.mcpf }}" onkeypress="$(this).mask('999.999.999-99').replaceAll('[.-]', '');">
+              <!-- <input type="text" name="cpf" class="form-control" value="{{ funcionario.cpf }}"  onKeyPress="MascaraCPF(form1.cpf);"
+                     onBlur="ValidarCPF(form1.cpf);" maxlength="14"> -->
+
+             <!--  {% render_field form.cpf class+="form-control" %} -->
             </div>
 
             <!-- Nome -->
@@ -37,7 +45,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">Data Nascimento</span>
               </div>
-              {% render_field form.data_nasc class+="form-control" %}
+              <input type="text" name="data_nasc" class="form-control"  value="{{ funcionario.data_nasc|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
 
               <!-- sexo -->
               <div class="input-group-prepend">
@@ -186,7 +194,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">Data Emissao</span>
               </div>
-              {% render_field form.data_emissao class+="form-control" %}
+              <input type="text" name="data_emissao" class="form-control"  value="{{ funcionario.data_emissao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
             </div>
 
             <!-- cnh -->
@@ -228,7 +236,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">Data PIS</span>
               </div>
-              {% render_field form.data_pis class+="form-control" %}
+              <input type="text" name="data_pis" class="form-control"  value="{{ funcionario.data_pis|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
             </div>
 
             <!-- banco_pis -->
@@ -310,7 +318,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">Data Chegada</span>
               </div>
-              {% render_field form.secao class+="form-control" %}
+              <input type="text" name="data_chegada" class="form-control"  value="{{ funcionario.data_chegada|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
             </div>
 
             <!-- tem_filhos_bras -->
@@ -352,7 +360,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">Data Admissão</span>
               </div>
-              {% render_field form.data_admissao class+="form-control" %}
+              <input type="text" name="data_admissao" class="form-control"  value="{{ funcionario.data_admissao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
             </div>
 
             <!-- funcao -->
@@ -386,15 +394,33 @@
             </div>
 
             <!-- foto -->
-
               <div class="input-group-prepend">
                 <span class="input-group-text">Foto</span>
               </div>
-              {% render_field form.foto class+="form-control" %}
 
+               {% render_field form.foto  %}
+            <br>
 
-            <button class="btn btn-primary">Enviar</button>
+            <button class="btn btn-primary">Salvar</button>
           </form>
+
+          <br>
+          <br>
+          <h2>Documentos</h2>
+          <ul>
+          {% for documento in object.documento_set.all %}
+              <li>
+                  <a href="{{ documento.arquivo.url }} "> {{ documento.descricao }}  </a><br>
+              </li>
+          {% endfor %}
+          </ul>
+
+          {% if object %}
+          <a href="{% url 'create_documento' object.id %}" class="btn btn-success">
+              Adicionar documento
+          </a>
+          {% endif %}
+
         </div>
       </div>
     </div>

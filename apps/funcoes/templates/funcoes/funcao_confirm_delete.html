@@ -4,7 +4,7 @@
 
 {% block main %}
 
-    <h2>Tem certeza que deseja deletar a Função "{{ funcao.nome }}"?</h2>
+    <h2>Tem certeza que deseja deletar a Função - {{ funcao.nome }}?</h2>
     <form method="POST" ENCTYPE="multipart/form-data">
         {% csrf_token %}
         {{ form }}

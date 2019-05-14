@@ -4,6 +4,7 @@ from django.urls import reverse
 # Criando model funcao.
 class Funcao(models.Model):
     nome = models.CharField(max_length=50, help_text="Nome da função")
+    salario = models.CharField(max_length=50, help_text="Salário Base", null=True, blank=True)
 
     def __str__(self):
         return self.nome

@@ -9,6 +9,8 @@ urlpatterns = [
     path('empresa/', include('apps.empresas.urls')),
     path('departamentos/', include('apps.departamentos.urls')),
     path('funcoes/', include('apps.funcoes.urls')),
+    path('eventos/', include('apps.eventos.urls')),
+    path('documentos/', include('apps.documentos.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -9,12 +9,15 @@
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="{% static 'bootstrap/js/MascaraValidacao.js' %}"></script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -44,6 +47,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="{% url 'lista_departamentos' %}">Departamentos</a>
                       <a class="dropdown-item" href="{% url 'lista_funcoes' %}">Funções</a>
+                      <a class="dropdown-item" href="{% url 'lista_eventos' %}">Eventos</a>
                     </div>
                 </li>
                 <li class="nav-item">

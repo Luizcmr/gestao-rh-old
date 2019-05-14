@@ -2,6 +2,8 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 
+from localflavor.br.models import BRCPFField
+
 from apps.departamentos.models import Departamento
 from apps.empresas.models import Empresa
 from apps.funcoes.models import Funcao
@@ -28,7 +30,8 @@ class Funcionario(models.Model):
     )
 
     nome = models.CharField(max_length=50, help_text="Nome do funcionário")
-    cpf = models.CharField(max_length=11, help_text="CPF do funcionário")
+    cpf=BRCPFField(max_length=11)
+    #cpf = models.CharField(max_length=11, help_text="CPF do funcionário")
     data_nasc = models.DateField(help_text="Data de Nascimento", null=True, blank=True )
     nacionalidade = models.CharField(max_length=15, help_text="Nacionalidade", null=True, blank=True)
     naturalidade = models.CharField(max_length=25, help_text="Naturalidade", null=True, blank=True)
@@ -47,7 +50,7 @@ class Funcionario(models.Model):
     cep = models.CharField(max_length=7, help_text='CEP', null=True, blank=True)
     telefone = models.CharField(max_length=40, help_text='Telefones', null=True, blank=True)
     celular = models.CharField(max_length=40, help_text='Celular', null=True, blank=True)
-    email = models.CharField(max_length=100, help_text='Email', null=True, blank=True)
+    email = models.EmailField(max_length=100, help_text='Email', null=True, blank=True)
     rg = models.CharField(max_length=15, help_text="RG do funcionário", null=True, blank=True)
     orgao = models.CharField(max_length=10, help_text="Órgão emissor", null=True, blank=True)
     data_emissao = models.DateField(help_text="Data de emissao", null=True, blank=True)
@@ -75,15 +78,31 @@ class Funcionario(models.Model):
     qtd_filhos_bras = models.IntegerField(help_text="Quantos Filhos Brasileiros", null=True, blank=True)
     data_chegada = models.DateField(help_text="Data de Chegada Brasil", null=True, blank=True)
     naturalizado = models.CharField(max_length=1, choices=SN_CHOICES, help_text="Naturalizado", null=True, blank=True)
-    num_decreto = models.CharField(max_length=10, help_text="Nº Decreto", null=True, blank=True)
+    num_decreto = models.CharField( max_length=10, help_text="Nº Decreto", null=True, blank=True)
     foto = models.ImageField(upload_to='funcionario_foto', null=True, blank=True)
     user = models.OneToOneField(User, on_delete=models.PROTECT, null=True, blank=True)
     departamentos = models.ForeignKey(Departamento, on_delete=models.PROTECT, null=True, blank=True)
     funcao = models.ForeignKey(Funcao, on_delete=models.PROTECT, null=True, blank=True)
     empresa = models.ForeignKey(Empresa, on_delete=models.PROTECT, null=True, blank=True)
 
+    def save(self, *args, **kwargs):
+        self.cpf = chr_remove(self.cpf, ".-/")
+        super(Funcionario, self).save(*args, **kwargs)
+
+    @property
+    def mcpf(self):
+        return self.cpf[:3] + "." + self.cpf[3:6] + "." + self.cpf[6:9] + "." + self.cpf[9:11]
+
     def __str__(self):
         return self.nome
 
+
     def get_absolute_url(self):
         return reverse('lista_funcionarios')
+
+
+def chr_remove(old, to_remove):
+    new_string = old
+    for x in to_remove:
+        new_string = new_string.replace(x, '')
+    return new_string

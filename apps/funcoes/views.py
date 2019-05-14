@@ -6,7 +6,7 @@ from .models import Funcao
 
 class FuncaoCreate(CreateView):
     model = Funcao
-    fields = ['nome']
+    fields = ['nome','salario']
 
     def form_valid(self, form):
         obj = form.save()
@@ -15,11 +15,11 @@ class FuncaoCreate(CreateView):
 
 class FuncaoEdit(UpdateView):
     model = Funcao
-    fields = ['nome']
+    fields = ['nome','salario']
 
 class FuncaoList(ListView):
     model = Funcao
-    fields = ['nome']
+    fields = ['nome','salario']
 
 class FuncaoDelete(DeleteView):
     model = Funcao

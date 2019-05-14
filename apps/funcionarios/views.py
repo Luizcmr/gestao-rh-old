@@ -1,7 +1,22 @@
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
+from django.contrib.auth.decorators import login_required
 from .models import Funcionario
+from .forms import FuncionarioForm
+
+
+
+#@login_required
+#def funcionarios_update(request, id):
+#    funcionario = get_object_or_404(Funcionario, pk=id)
+#    form = FuncionarioForm(request.POST or None, request.FILES or None, instance=funcionario)
+#
+#    if form.is_valid():
+#        form.save()
+#        return redirect('funcionario_list')
+#
+#    return render(request, 'funcionario_form.html', {'form': form})
 
 
 class FuncionarioCreate(CreateView):
@@ -41,6 +56,7 @@ class FuncionarioEdit(UpdateView):
               'tem_filhos_bras', 'qtd_filhos_bras', 'data_chegada',
               'naturalizado', 'num_decreto', 'foto',
               'user', 'departamentos', 'funcao', 'empresa']
+
 
 
 class FuncionarioList(ListView):

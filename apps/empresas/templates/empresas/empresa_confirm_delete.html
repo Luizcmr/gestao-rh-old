@@ -4,7 +4,7 @@
 
 {% block main %}
 
-    <h2>Tem certeza que deseja deletar a Empresa - {{ empresa.nome }}?</h2>
+    <h2>Tem certeza que deseja Excluir a Empresa - {{ empresa.nome }}?</h2>
     <form method="POST" ENCTYPE="multipart/form-data">
         {% csrf_token %}
         {{ form }}

@@ -25,7 +25,7 @@
               {% for funcionario in object_list %}
                 <tr>
                   <td>{{ funcionario.id }}</td>
-                  <td>{{ funcionario.cpf }}</td>
+                  <td>{{ funcionario.mcpf }}</td>
                   <td>{{ funcionario.nome }}</td>
                   <td>{{ funcionario.telefones }}</td>
                   <td>{{ funcionario.email }}</td>
@@ -33,7 +33,7 @@
                   <td>
                     <a href="{% url 'edit_funcionario' pk=funcionario.id %}"
                        class="btn btn-info">
-                      Atualizar
+                      Alterar
                     </a>
                     <a href="{% url 'deleta_funcionario' pk=funcionario.id %}"
                        class="btn btn-danger">
