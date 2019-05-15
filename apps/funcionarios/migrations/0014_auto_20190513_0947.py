@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='funcionario',
             name='cpf',
-            field=localflavor.br.models.BRCPFField(max_length=14),
+            field=models.CharField(help_text='CPF do funcionário', max_length=11),
         ),
     ]
