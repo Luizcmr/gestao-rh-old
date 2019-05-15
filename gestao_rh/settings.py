@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'apps.core',
     'bootstrapform',
     'widget_tweaks',
-    'localflavor',
 ]
 
 MIDDLEWARE = [

@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 
-from localflavor.br.models import BRCPFField
+#from localflavor.br.models import BRCPFField
 
 from apps.departamentos.models import Departamento
 from apps.empresas.models import Empresa
@@ -30,8 +30,8 @@ class Funcionario(models.Model):
     )
 
     nome = models.CharField(max_length=50, help_text="Nome do funcionário")
-    cpf=BRCPFField(max_length=11)
-    #cpf = models.CharField(max_length=11, help_text="CPF do funcionário")
+    #cpf=BRCPFField(max_length=11)
+    cpf = models.CharField(max_length=11, help_text="CPF do funcionário")
     data_nasc = models.DateField(help_text="Data de Nascimento", null=True, blank=True )
     nacionalidade = models.CharField(max_length=15, help_text="Nacionalidade", null=True, blank=True)
     naturalidade = models.CharField(max_length=25, help_text="Naturalidade", null=True, blank=True)
