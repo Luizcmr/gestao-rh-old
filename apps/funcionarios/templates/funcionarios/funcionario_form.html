@@ -25,7 +25,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">CPF</span>
               </div>
-              <input type="text" name="cpf" class="form-control" value="{{ funcionario.mcpf }}" onkeypress="$(this).mask('999.999.999-99').replaceAll('[.-]', '');">
+              <input type="text" name="cpf" class="form-control" value="{{ funcionario.mcpf }}" onkeypress="$(this).mask('999.999.999-99');" maxlength="14">
               <!-- <input type="text" name="cpf" class="form-control" value="{{ funcionario.cpf }}"  onKeyPress="MascaraCPF(form1.cpf);"
                      onBlur="ValidarCPF(form1.cpf);" maxlength="14"> -->
 
