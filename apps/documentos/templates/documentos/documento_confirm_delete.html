@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %} Departamentos {% endblock %}
+{% block title %} Documentos {% endblock %}
 
 {% block main %}
 
-    <h2>Tem certeza que deseja Excluir o Departamento - {{ departamento.nome }}?</h2>
+    <h2>Tem certeza que deseja Excluir o Documento - {{ documento.descricao }}?</h2>
     <form method="POST" ENCTYPE="multipart/form-data">
         {% csrf_token %}
         {{ form }}
