@@ -133,9 +133,9 @@ MEDIA_URL = '/media/'
 # usando pasta compartilhada do servidor
 # MEDIA_ROOT = '\\servidor\pasta-media\'
 # outra forma de uso
-# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-MEDIA_ROOT = 'media'
+#MEDIA_ROOT = 'media'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
