@@ -13,9 +13,9 @@
             <table class="table">
               <thead class="thead-dark">
               <tr>
+                <th>Nome</th>
                 <th>ID</th>
                 <th>CPF</th>
-                <th>Nome</th>
                 <th>Telefones</th>
                 <th>Email</th>
                 <th>Ações</th>
@@ -24,15 +24,14 @@
               <tbody>
               {% for funcionario in object_list %}
                 <tr>
+                  <td>{{ funcionario.nome }}</td>
                   <td>{{ funcionario.id }}</td>
                   <td>{{ funcionario.mcpf }}</td>
-                  <td>{{ funcionario.nome }}</td>
                   <td>{{ funcionario.telefones }}</td>
                   <td>{{ funcionario.email }}</td>
                   <td>
                     <a href="{% url 'edit_funcionario' pk=funcionario.id %}"
                        <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px"></i>
-
                     </a>
                     <a href="{% url 'deleta_funcionario' pk=funcionario.id %}"
                        <i class="fa fa-trash" style="font-size:20px;color:red"></i>

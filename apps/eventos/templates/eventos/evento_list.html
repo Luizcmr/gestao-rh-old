@@ -25,12 +25,10 @@
                   <td>{{ evento.nome }}</td>
                   <td>
                     <a href="{% url 'edit_evento' pk=evento.id %}"
-                       class="btn btn-info">
-                      Alterar
+                       <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px"></i>
                     </a>
                     <a href="{% url 'deleta_evento' pk=evento.id %}"
-                       class="btn btn-danger">
-                      Excluir
+                       <i class="fa fa-trash" style="font-size:20px;color:red"></i>
                     </a>
                   </td>
                 </tr>

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'apps.funcoes',
     'apps.documentos',
     'apps.eventos',
+    'apps.dependentes_func',
     'apps.horas_extras',
     'apps.core',
     'bootstrapform',

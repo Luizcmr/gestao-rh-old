@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Dependentes {% endblock %}
+
+{% block main %}
+
+    <h2>Tem certeza que deseja Excluir o Dependente - {{ dependentes_func.nome }}?</h2>
+    <form method="POST" ENCTYPE="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-danger">Excluir</button>
+    </form>
+{% endblock %}
+

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% load widget_tweaks %}
+
+{% block title %}Cadastro de Dependentes{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <form method="post">
+            <h5 class="card-title">Cadastro de Dependentes</h5>
+            <!-- Não se esqueça dessa tag -->
+            {% csrf_token %}
+
+            <!-- Nome -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nome do Dependente</span>
+              </div>
+              {% render_field form.nome class+="form-control" %}
+            </div>
+
+              <!-- estado_civil -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Grau de Parentesco</span>
+              </div>
+              {% render_field form.parentesco class+="form-control" %}
+            </div>
+
+            <!-- Data de Nascimento -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Data de Nascimento</span>
+              </div>
+              <input type="text" name="data_nasc" class="form-control"  value="{{ dependentes_func.data_nasc|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+            </div>
+
+            <button class="btn btn-primary">Salvar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
