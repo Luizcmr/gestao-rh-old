@@ -6,19 +6,6 @@ from .models import Funcionario
 from .forms import FuncionarioForm
 
 
-
-#@login_required
-#def funcionarios_update(request, id):
-#    funcionario = get_object_or_404(Funcionario, pk=id)
-#    form = FuncionarioForm(request.POST or None, request.FILES or None, instance=funcionario)
-#
-#    if form.is_valid():
-#        form.save()
-#        return redirect('funcionario_list')
-#
-#    return render(request, 'funcionario_form.html', {'form': form})
-
-
 class FuncionarioCreate(CreateView):
     model = Funcionario
     fields = ['nome','cpf','data_nasc','nacionalidade','naturalidade', 'sexo',
@@ -72,6 +59,20 @@ class FuncionarioList(ListView):
               'tem_filhos_bras', 'qtd_filhos_bras', 'data_chegada',
               'naturalizado', 'num_decreto', 'foto',
               'user', 'departamentos', 'funcao', 'empresa']
+
+    def get_queryset(self):
+        filter_nome = self.request.GET.get('pesqnome', None)
+        filter_cpf = self.request.GET.get('pesqcpf', None)
+        order = 'nome'
+        if filter_nome:
+            new_context = Funcionario.objects.filter(nome__contains=filter_nome, ).order_by(order)
+        else:
+            if filter_cpf:
+               new_context = Funcionario.objects.filter(cpf__contains=filter_cpf, ).order_by(order)
+            else:
+               new_context = Funcionario.objects.order_by(order).all()
+        return new_context
+
 
 class FuncionarioDelete(DeleteView):
     model = Funcionario

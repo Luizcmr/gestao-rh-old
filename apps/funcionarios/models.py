@@ -91,7 +91,7 @@ class Funcionario(models.Model):
 
     @property
     def mcpf(self):
-        return self.cpf[:3] + "." + self.cpf[3:6] + "." + self.cpf[6:9] + "." + self.cpf[9:11]
+        return self.cpf[:3] + "." + self.cpf[3:6] + "." + self.cpf[6:9] + "-" + self.cpf[9:11]
 
     def __str__(self):
         return self.nome

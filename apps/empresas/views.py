@@ -11,6 +11,7 @@ class EmpresaCreate(CreateView):
     fields = ['nome','cnpj','fantasia','insc_est','insc_mun','endereco',
               'numero','complemento','bairro','cidade','uf','cep','telefones','email']
 
+
     def form_valid(self, form):
         obj = form.save()
 
@@ -31,6 +32,20 @@ class EmpresaList(ListView):
     model = Empresa
     fields = ['nome', 'cnpj', 'fantasia', 'insc_est', 'insc_mun', 'endereco',
               'numero', 'complemento', 'bairro', 'cidade', 'uf', 'cep', 'telefones', 'email']
+
+    def get_queryset(self):
+        filter_nome = self.request.GET.get('pesqnome', None)
+        filter_cnpj = self.request.GET.get('pesqcnpj', None)
+        order = 'nome'
+        if filter_nome:
+            new_context = Empresa.objects.filter(nome__contains=filter_nome, ).order_by(order)
+        else:
+            if filter_cnpj:
+               new_context = Empresa.objects.filter(cnpj__contains=filter_cnpj, ).order_by(order)
+            else:
+               new_context = Empresa.objects.order_by(order).all()
+
+        return new_context
 
 class EmpresaDelete(DeleteView):
     model = Empresa

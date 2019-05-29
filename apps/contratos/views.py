@@ -37,6 +37,19 @@ class ContratoList(ListView):
               'prazo_experiencia', 'vencto_experiencia', 'funcao', 'salario', 'data_inicio_aviso',
               'data_fim_aviso', 'motivo', 'data_demissao', 'data_homologacao', 'data_pagamento']
 
+    def get_queryset(self):
+        filter_func = self.request.GET.get('pesqfunc', None)
+        filter_emp = self.request.GET.get('pesqemp', None)
+        order = 'funcionario'
+        if filter_func:
+            new_context = Contrato.objects.filter(funcionario__nome__contains=filter_func, ).order_by(order)
+        else:
+            if filter_emp:
+               new_context = Contrato.objects.filter(empresa__nome__contains=filter_emp, ).order_by(order)
+            else:
+               new_context = Contrato.objects.order_by(order).all()
+        return new_context
+
 
 class ContratoDelete(DeleteView):
     model = Contrato

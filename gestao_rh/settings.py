@@ -29,6 +29,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['gestar-rh-alianca.herokuapp.com','localhost']
 
+ADMINS = [('Luiz Ribeiro','lcribeiro1809@gmail.com'),]
 
 # Application definition
 

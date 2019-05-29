@@ -21,7 +21,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">CNPJ</span>
               </div>
-              {% render_field form.cnpj class+="form-control" %}
+               <input type="text" name="cnpj" class="form-control" value="{{ empresa.mcnpj }}" onkeypress="$(this).mask('99.999.999/9999-99');" maxlength="18">
             </div>
 
             <!-- Nome -->
