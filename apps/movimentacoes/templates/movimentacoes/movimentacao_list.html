@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Lista de Contratos{% endblock %}
+{% block title %}Listagem de Movimentações{% endblock %}
 
 {% block main %}
 
@@ -9,42 +9,42 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="card">
         <div class="card-body">
-           <h5 class="card-title">Lista de Contratos</h5>
+           <h5 class="card-title">Listagem de Movimentações</h5>
            <br>
               <form >
                 <div class="input-group mb-2 ">
                    <label for="pesqFunc" class="sr-only">Funcionário</label>
                    <input type="text" class="form-control col-md-4" id="pesqFunc" name="pesqfunc" placeholder="Funcionário">
-                   <label for="pesqEmp" class="sr-only">Empresa</label>
-                   <input type="text" class="form-control col-md-4" id="pesqEmp" name="pesqemp" placeholder="Empresa">
+                   <label for="pesqEvento" class="sr-only">Evento</label>
+                   <input type="text" class="form-control col-md-4" id="pesqEvento" name="pesqevento" placeholder="Evento">
                    <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
                 </div>
               </form>
               <div class="table-responsive">
                 <table class="table">
                   <thead class="thead-dark">
-                  <tr>
-                    <th>Nome</th>
-                    <th>ID</th>
-                    <th>Data de Admissão</th>
-                    <th>Empresa</th>
-                    <th>Funçao</th>
-                    <th>Ações</th>
-                  </tr>
+                      <tr>
+                        <th>Funcionário</th>
+                        <th>Data do Evento</th>
+                        <th>Evento</th>
+                        <th>Data para Conclusão</th>
+                        <th>Concluído Em</th>
+                        <th>Ações</th>
+                      </tr>
                   </thead>
                   <tbody>
-                  {% for contrato in object_list %}
+                  {% for movimentacao in object_list %}
                     <tr>
-                      <td>{{ contrato.funcionario }}</td>
-                      <td>{{ contrato.id }}</td>
-                      <td>{{ contrato.data_admissao }}</td>
-                      <td>{{ contrato.empresa }}</td>
-                      <td>{{ contrato.funcao }}</td>
+                      <td>{{ movimentacao.funcionario }}</td>
+                      <td>{{ movimentacao.data_evento }}</td>
+                      <td>{{ movimentacao.evento }}</td>
+                      <td>{{ movimentacao.data_para_conclusao }}</td>
+                      <td>{{ movimentacao.concluido_em }}</td>
                       <td>
-                        <a href="{% url 'edit_contrato' pk=contrato.id %}"
+                        <a href="{% url 'edit_movimentacao' pk=movimentacao.id %}"
                            <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px"></i>
                         </a>
-                        <a href="{% url 'deleta_contrato' pk=contrato.id %}"
+                        <a href="{% url 'deleta_movimentacao' pk=movimentacao.id %}"
                            <i class="fa fa-trash" style="font-size:20px;color:red"></i>
                         </a>
                       </td>
@@ -55,8 +55,8 @@
               </div>
          <hr />
           <div class="text-right">
-            <a href="{% url 'create_contrato' %}" class="btn btn-primary">
-              Cadastrar Contrato
+            <a href="{% url 'create_movimentacao' %}" class="btn btn-primary">
+              Cadastrar Movimentação
             </a>
           </div>
         </div>

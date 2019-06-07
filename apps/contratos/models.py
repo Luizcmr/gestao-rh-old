@@ -43,6 +43,5 @@ class Contrato(models.Model):
    def __str__(self):
        return self.funcionario
 
-
    def get_absolute_url(self):
        return reverse('lista_contratos')

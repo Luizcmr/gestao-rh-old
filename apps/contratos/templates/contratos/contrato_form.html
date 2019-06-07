@@ -2,9 +2,7 @@
 {% load static%}
 {% load bootstrap %}
 {% load widget_tweaks %}
-<head>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+
 {% block title %}Cadastro de Funcionários{% endblock %}
 
 {% block main %}
@@ -15,7 +13,7 @@
         <div class="card-body">
           <h5 class="card-title">Cadastro de Contratos</h5>
 
-          <form name="form" method="post" enctype="multipart/form-data">
+          <form method="post" enctype="multipart/form-data" id="contratoForm" data-funcionarios-url="{% url 'ajax_load_funcionarios' %}" >
             <!-- Não se esqueça dessa tag -->
             {% csrf_token %}
 
@@ -174,4 +172,23 @@
     </div>
   </div>
 </div>
+
+  <script>
+    $("#id_empresa").change(function () {
+      var url = $("#contratoForm").attr("data-funcionarios-url");  // get the url of the `load_cities` view
+      var empresaId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'empresa': empresaId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_funcionario").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+  </script>
+
 {% endblock %}

@@ -11,6 +11,7 @@ urlpatterns = [
     path('funcoes/', include('apps.funcoes.urls')),
     path('eventos/', include('apps.eventos.urls')),
     path('contratos/', include('apps.contratos.urls')),
+    path('movimentacoes/', include('apps.movimentacoes.urls')),
     path('documentos/', include('apps.documentos.urls')),
     path('dependentes_func/', include('apps.dependentes_func.urls')),
     path('admin/', admin.site.urls),

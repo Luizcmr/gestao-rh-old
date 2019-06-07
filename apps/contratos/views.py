@@ -3,14 +3,12 @@ from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 from .models import Contrato, Funcionario
+from .forms import ContratoForm
 
 
 class ContratoCreate(CreateView):
     model = Contrato
-    fields = ['funcionario','empresa','contratado_por','data_admissao','data_registro',
-              'optante_fgts','data_opcao','data_retratacao','banco_depositario','em_experiencia',
-              'prazo_experiencia','vencto_experiencia','funcao','salario','data_inicio_aviso',
-              'data_fim_aviso','motivo', 'data_demissao','data_homologacao','data_pagamento']
+    form_class = ContratoForm
 
     def form_valid(self, form):
         # gravando usuário no cadastro de contrato
@@ -54,3 +52,9 @@ class ContratoList(ListView):
 class ContratoDelete(DeleteView):
     model = Contrato
     success_url = reverse_lazy("lista_contratos")
+
+
+def load_funcionarios(request):
+    empresa_id = request.GET.get('empresa')
+    funcionarios = Funcionario.objects.filter(empresa_id=empresa_id).order_by('nome')
+    return render(request, 'hr/funcionario_dropdown_list_options.html', {'funcionarios': funcionarios})

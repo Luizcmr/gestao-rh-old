@@ -20,37 +20,39 @@
                   <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
                 </div>
               </form>
-;            <table class="table">
-              <thead class="thead-dark">
-              <tr>
-                <th>Nome</th>
-                <th>ID</th>
-                <th>CPF</th>
-                <th>Telefones</th>
-                <th>Email</th>
-                <th>Ações</th>
-              </tr>
-              </thead>
-              <tbody>
-              {% for funcionario in object_list %}
-                <tr>
-                  <td>{{ funcionario.nome }}</td>
-                  <td>{{ funcionario.id }}</td>
-                  <td>{{ funcionario.mcpf }}</td>
-                  <td>{{ funcionario.telefones }}</td>
-                  <td>{{ funcionario.email }}</td>
-                  <td>
-                    <a href="{% url 'edit_funcionario' pk=funcionario.id %}"
-                       <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px"></i>
-                    </a>
-                    <a href="{% url 'deleta_funcionario' pk=funcionario.id %}"
-                       <i class="fa fa-trash" style="font-size:20px;color:red"></i>
-                    </a>
-                  </td>
-                </tr>
-              {% endfor %}
-              </tbody>
-            </table>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="thead-dark">
+                  <tr>
+                    <th>Nome</th>
+                    <th>ID</th>
+                    <th>CPF</th>
+                    <th>Telefones</th>
+                    <th>Empresa</th>
+                    <th>Ações</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% for funcionario in object_list %}
+                    <tr>
+                      <td>{{ funcionario.nome }}</td>
+                      <td>{{ funcionario.id }}</td>
+                      <td>{{ funcionario.mcpf }}</td>
+                      <td>{{ funcionario.celular }}</td>
+                      <td>{{ funcionario.empresa }}</td>
+                      <td>
+                        <a href="{% url 'edit_funcionario' pk=funcionario.id %}"
+                           <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px"></i>
+                        </a>
+                        <a href="{% url 'deleta_funcionario' pk=funcionario.id %}"
+                           <i class="fa fa-trash" style="font-size:20px;color:red"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
          <hr />
           <div class="text-right">
             <a href="{% url 'create_funcionario' %}" class="btn btn-primary">

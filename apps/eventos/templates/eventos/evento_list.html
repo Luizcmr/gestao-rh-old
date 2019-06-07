@@ -10,31 +10,33 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Lista de Eventos</h5>
-            <table class="table">
-              <thead class="thead-dark">
-              <tr>
-                <th>ID</th>
-                <th>Evento</th>
-                <th>Ações</th>
-              </tr>
-              </thead>
-              <tbody>
-              {% for evento in object_list %}
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="thead-dark">
                 <tr>
-                  <td>{{ evento.id }}</td>
-                  <td>{{ evento.nome }}</td>
-                  <td>
-                    <a href="{% url 'edit_evento' pk=evento.id %}"
-                       <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px"></i>
-                    </a>
-                    <a href="{% url 'deleta_evento' pk=evento.id %}"
-                       <i class="fa fa-trash" style="font-size:20px;color:red"></i>
-                    </a>
-                  </td>
+                  <th>ID</th>
+                  <th>Evento</th>
+                  <th>Ações</th>
                 </tr>
-              {% endfor %}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                {% for evento in object_list %}
+                  <tr>
+                    <td>{{ evento.id }}</td>
+                    <td>{{ evento.nome }}</td>
+                    <td>
+                      <a href="{% url 'edit_evento' pk=evento.id %}"
+                         <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px"></i>
+                      </a>
+                      <a href="{% url 'deleta_evento' pk=evento.id %}"
+                         <i class="fa fa-trash" style="font-size:20px;color:red"></i>
+                      </a>
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
          <hr />
           <div class="text-right">
             <a href="{% url 'create_evento' %}" class="btn btn-primary">

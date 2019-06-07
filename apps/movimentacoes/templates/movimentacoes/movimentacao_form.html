@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static%}
+{% load bootstrap %}
+{% load widget_tweaks %}
+
+{% block title %}Movimentação de Funcionários{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Movimentação de Funcionários</h5>
+          <br>
+          <form method="post" enctype="multipart/form-data" >
+            <!-- Não se esqueça dessa tag -->
+            {% csrf_token %}
+
+            <!-- funcionario -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Funcionário</span>
+              </div>
+              {% render_field form.funcionario class+="form-control" %}
+            </div>
+
+            <!-- evento -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Evento</span>
+              </div>
+              {% render_field form.evento class+="form-control" %}
+            </div>
+
+            <div class="input-group mb-3" >
+              <!-- data_evento -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Data do Evento</span>
+              </div>
+              <input type="text" name="data_evento" class="form-control col-md-4"  value="{{ movimentacao.data_evento|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+            </div>
+
+            <div class="input-group mb-3">
+              <!-- data_para_conclusao -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Data para Conclusão</span>
+              </div>
+              <input type="text" name="data_para_conclusao" class="form-control col-md-4"  value="{{ movimentacao.data_para_conclusao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+            </div>
+
+            <div class="input-group mb-3">
+              <!-- concluido_em -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Concluído em</span>
+              </div>
+              <input type="text" name="concluido_em" class="form-control col-md-4"  value="{{ movimentacao.concluido_em|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+            </div>
+
+            <div class="input-group mb-3">
+              <!-- observacao -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Observação</span>
+              </div>
+              <textarea id="observacao" name="observacao" rows="4" cols="80" >{{ movimentacao.observacao }}</textarea>
+
+            </div>
+
+            <button class="btn btn-primary">Salvar</button>
+
+          </form>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
