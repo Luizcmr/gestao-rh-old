@@ -14,7 +14,7 @@ class EventoCreate(CreateView):
 
 class EventoEdit(UpdateView):
     model = Evento
-    fields = ['nome']
+    fields = ['id','nome']
 
 class EventoList(ListView):
     model = Evento

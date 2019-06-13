@@ -19,8 +19,13 @@
             <!-- Nome -->
             <div class="input-group mb-3">
               <div class="input-group-prepend">
+                <span class="input-group-text ">ID</span>
+              </div>
+              {% render_field form.id class+="form-control col-sm-2" %}
+              <div class="input-group-prepend">
                 <span class="input-group-text">Nome do Evento</span>
               </div>
+
               {% render_field form.nome class+="form-control" %}
             </div>
 
