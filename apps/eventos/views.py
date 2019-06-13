@@ -6,7 +6,7 @@ from .models import Evento
 
 class EventoCreate(CreateView):
     model = Evento
-    fields = ['nome']
+    fields = ['id','nome']
 
     def form_valid(self, form):
         obj = form.save()
@@ -18,7 +18,7 @@ class EventoEdit(UpdateView):
 
 class EventoList(ListView):
     model = Evento
-    fields = ['nome']
+    fields = ['id','nome']
 
 class EventoDelete(DeleteView):
     model = Evento
