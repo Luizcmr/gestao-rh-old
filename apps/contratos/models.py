@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from apps.empresas.models import Empresa
 from apps.funcoes.models import Funcao
 from apps.funcionarios.models import Funcionario
+from apps.movimentacoes.models import Movimentacao
 
 # Criando model funcionario.
 class Contrato(models.Model):
@@ -38,6 +39,60 @@ class Contrato(models.Model):
    login = models.CharField(max_length=20, help_text="Motivo da Demissão", null=True, blank=True)
    data_mov = models.DateTimeField(auto_now_add=True, help_text="Data do Movimento")
    tipo_ope = models.CharField(max_length=1, help_text="Tipo de Operação", null=True, blank=True)
+
+   class Meta:
+       ordering = ['empresa','funcionario','data_lancamento']
+
+   def save(self, *args, **kwargs):
+
+      # Atualizando dados do funcionario
+      func = Funcionario.objects.filter(id=self.funcionario_id).update(salario=self.salario,
+                                                                       funcao_id=self.funcao)
+
+      # atualizando tabela de movimentacao do funcionario
+      wdata_admissao = self.data_admissao
+      wdata_aviso = self.data_inicio_aviso
+      wdata_demissao = self.data_demissao
+
+      if wdata_admissao is not None:
+         movi_count = Movimentacao.objects.filter(evento=1, funcionario=self.funcionario_id).count()
+         if movi_count == 0:
+            obs = "Funcionário Admitido na empresa " + str(self.empresa)
+            mov = Movimentacao.objects.create(funcionario=self.funcionario,
+                                              evento_id=1,
+                                              data_evento=wdata_admissao,
+                                              data_para_conclusao=wdata_admissao,
+                                              concluido_em=wdata_admissao,
+                                              observacao=obs
+                                              )
+
+      if wdata_aviso is not None:
+         movi_count = Movimentacao.objects.filter(evento=2, funcionario=self.funcionario_id).count()
+         if movi_count == 0:
+            obs = "Funcionário em Aviso Prévio na empresa " + str(self.empresa)
+            mov = Movimentacao.objects.create(funcionario=self.funcionario,
+                                              evento_id=2,
+                                              data_evento=wdata_aviso,
+                                              data_para_conclusao=wdata_aviso,
+                                              concluido_em=wdata_aviso,
+                                              observacao=obs
+                                              )
+
+      if wdata_demissao is not None:
+         movi_count = Movimentacao.objects.filter(evento=3, funcionario=self.funcionario_id).count()
+
+         if movi_count == 0:
+            obs = "Funcionário Demitido da empresa " + str(self.empresa) + " pelo motivo " + str(self.motivo)
+            mov = Movimentacao.objects.create(funcionario=self.funcionario,
+                                              evento_id=3,
+                                              data_evento=wdata_demissao,
+                                              data_para_conclusao=wdata_demissao,
+                                              concluido_em=wdata_demissao,
+                                              observacao=obs
+                                              )
+
+
+      super(Contrato, self).save(*args, **kwargs)
 
 
    def __str__(self):

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static%}
+{% load bootstrap %}
+{% load widget_tweaks %}
+
+{% block title %}Transferência de Funcionários{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Transferência de Funcionários</h5>
+          <br>
+          <form method="POST" ENCTYPE="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Id</span>
+                </div>
+                <input type="text" Name="id" class="form-control col-sm-2"  value="{{ funcionario.id }}" readonly >
+
+                <div class="input-group-prepend">
+                    <span class="input-group-text">CPF</span>
+                 </div>
+                <input type="text" name="cpf" class="form-control" value="{{ funcionario.mcpf }}" onkeypress="$(this).mask('999.999.999-99');" maxlength="14" readonly>
+
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Nome</span>
+                 </div>
+                <input type="text" name="nome" class="form-control" value="{{ funcionario.nome }}" readonly>
+            </div>
+             <!-- empresa -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Transferir para Empresa</span>
+              </div>
+              {% render_field form.empresa class+="form-control" %}
+            </div>
+             <!-- data de transferência -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Data da Transferência</span>
+              </div>
+              <input type="text" name="data_movto" id="data_movto" class="form-control"  onkeypress="$(this).mask('99/99/9999');">
+            </div>
+
+            <button type="submit" class="btn btn-danger">Transferir</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static%}
+{% load static %}
 {% load bootstrap %}
 {% load widget_tweaks %}
 
@@ -30,7 +30,12 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">Evento</span>
               </div>
-              {% render_field form.evento class+="form-control" %}
+              {% render_field form.evento class+="form-control  col-md-4" onchange="verEmp()" id="ievento" %}
+              <div class="input-group-prepend" id="divEmpresa" style="visibility:hidden;">
+                <span class="input-group-text">Empresa</span>
+                {% render_field empresa.nome class+="form-control  col-md-4" %}
+              </div>
+
             </div>
 
             <div class="input-group mb-3" >
@@ -75,5 +80,17 @@
     </div>
   </div>
 </div>
+
+<script language="JavaScript" type="text/javascript" >
+  function verEmp(){
+    var cevento = $("#ievento option:selected").text();
+
+    if(cevento == 'Transferência') {
+        document.getElementById("divEmpresa").style.visibility ="visible";
+    } else {
+        document.getElementById("divEmpresa").style.visibility ="hidden";
+    }
+}
+</script>
 
 {% endblock %}

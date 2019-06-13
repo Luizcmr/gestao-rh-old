@@ -27,3 +27,4 @@ class DepartamentoDelete(DeleteView):
     success_url = reverse_lazy("lista_departamentos")
 
 
+

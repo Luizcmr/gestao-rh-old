@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from apps.funcionarios.models import Funcionario
 from apps.eventos.models import Evento
+from apps.empresas.models import Empresa
 
 # Create your models here.
 class Movimentacao(models.Model):
@@ -14,6 +15,14 @@ class Movimentacao(models.Model):
    concluido_em = models.DateField(help_text="Concluído em", null=True, blank=True)
    observacao = models.CharField(max_length=200, help_text="Observação", null=True, blank=True)
    login = models.CharField(max_length=20, help_text="login que lançou", null=True, blank=True)
+
+   class Meta:
+      ordering = ['funcionario','data_evento']
+
+   @property
+   def mempresa(self):
+        return Empresa.objects.all()
+
 
    def __str__(self):
         return self.funcionario

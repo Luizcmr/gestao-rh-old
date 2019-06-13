@@ -28,10 +28,10 @@
                       <td>{{ funcao.salario }}</td>
                       <td>
                         <a href="{% url 'edit_funcao' pk=funcao.id %}"
-                           <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px"></i>
+                           <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px" title="Alterar Função"></i>
                         </a>
                         <a href="{% url 'deleta_funcao' pk=funcao.id %}"
-                           <i class="fa fa-trash" style="font-size:20px;color:red"></i>
+                           <i class="fa fa-trash" style="font-size:20px;color:red" title="Excluir Funcão"></i>
                         </a>
                       </td>
                     </tr>

@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 from django.contrib.auth.decorators import login_required
 from .models import Funcionario
+from apps.movimentacoes.models import Movimentacao
 from .forms import FuncionarioForm
 
 
@@ -42,7 +43,7 @@ class FuncionarioEdit(UpdateView):
               'cbo', 'data_admissao', 'salario', 'estrangeiro', 'casado_bras',
               'tem_filhos_bras', 'qtd_filhos_bras', 'data_chegada',
               'naturalizado', 'num_decreto', 'foto',
-              'user', 'departamentos', 'funcao', 'empresa']
+              'departamentos', 'funcao', 'empresa']
 
 
 
@@ -58,7 +59,7 @@ class FuncionarioList(ListView):
               'cbo', 'data_admissao', 'salario', 'estrangeiro', 'casado_bras',
               'tem_filhos_bras', 'qtd_filhos_bras', 'data_chegada',
               'naturalizado', 'num_decreto', 'foto',
-              'user', 'departamentos', 'funcao', 'empresa']
+              'departamentos', 'funcao', 'empresa']
 
     def get_queryset(self):
         filter_nome = self.request.GET.get('pesqnome', None)
@@ -77,3 +78,27 @@ class FuncionarioList(ListView):
 class FuncionarioDelete(DeleteView):
     model = Funcionario
     success_url = reverse_lazy("lista_funcionarios")
+
+
+class FuncionarioTransfere(UpdateView):
+    model = Funcionario
+    fields = ['nome', 'cpf', 'empresa', 'data_movto']
+    template_name_suffix = '_transferir'
+
+    def form_valid(self, form):
+
+        """If the form is valid, save the associated model."""
+        func = form.save(commit=False)
+        movi_count = Movimentacao.objects.filter(evento=4, funcionario=func.id).count()
+
+        if movi_count == 0:
+            obs = "Funcionário transferido para empresa " + str(func.empresa)
+            mov = Movimentacao.objects.create(funcionario_id=func.id,
+                                              data_evento=func.data_movto,
+                                              data_para_conclusao=func.data_movto,
+                                              concluido_em=func.data_movto,
+                                              evento_id=4,
+                                              observacao=obs
+                                              )
+        self.object = form.save()
+        return super().form_valid(form)

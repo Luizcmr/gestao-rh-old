@@ -36,16 +36,16 @@
                   {% for movimentacao in object_list %}
                     <tr>
                       <td>{{ movimentacao.funcionario }}</td>
-                      <td>{{ movimentacao.data_evento }}</td>
+                      <td>{{ movimentacao.data_evento|date:'d/m/Y' }}</td>
                       <td>{{ movimentacao.evento }}</td>
-                      <td>{{ movimentacao.data_para_conclusao }}</td>
-                      <td>{{ movimentacao.concluido_em }}</td>
+                      <td>{{ movimentacao.data_para_conclusao|date:'d/m/Y' }}</td>
+                      <td>{{ movimentacao.concluido_em|date:'d/m/Y' }}</td>
                       <td>
                         <a href="{% url 'edit_movimentacao' pk=movimentacao.id %}"
-                           <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px"></i>
+                           <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px" title="Alterar Movimentação"></i>
                         </a>
                         <a href="{% url 'deleta_movimentacao' pk=movimentacao.id %}"
-                           <i class="fa fa-trash" style="font-size:20px;color:red"></i>
+                           <i class="fa fa-trash" style="font-size:20px;color:red" title="Excluir Movimentação"></i>
                         </a>
                       </td>
                     </tr>

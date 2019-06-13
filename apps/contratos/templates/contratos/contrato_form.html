@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static%}
+{% load static %}
 {% load bootstrap %}
 {% load widget_tweaks %}
 
@@ -12,7 +12,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Cadastro de Contratos</h5>
-
+          <br>
           <form method="post" enctype="multipart/form-data" id="contratoForm" data-funcionarios-url="{% url 'ajax_load_funcionarios' %}" >
             <!-- Não se esqueça dessa tag -->
             {% csrf_token %}
@@ -46,13 +46,33 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">Data de Admissão</span>
               </div>
-              <input type="text" name="data_admissao" class="form-control"  value="{{ contrato.data_admissao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+              <input type="text" name="data_admissao" class="form-control"  value="{{ contrato.data_admissao|date:'d/m/Y'}}" id="dataini" onkeypress="$(this).mask('99/99/9999');">
 
               <!-- data_registro -->
               <div class="input-group-prepend">
                 <span class="input-group-text">Data de Registro</span>
               </div>
               <input type="text" name="data_registro" class="form-control"  value="{{ contrato.data_registro|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+            </div>
+
+            <div class="input-group mb-3">
+              <!-- em_experiencia -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Em Experiência</span>
+              </div>
+              {% render_field form.em_experiencia class+="form-control" %}
+
+              <!-- prazo_experiencia -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Prazo Experiência</span>
+              </div>
+              <input onchange="calculaDataFin();" name="prazo_experiencia"  class="form-control" value="{{ contrato.prazo_experiencia}}" type="number" id="dias"  />
+
+              <!-- vencto_experiencia -->
+              <div class="input-group-prepend">
+                <span class="input-group-text">Vencimento</span>
+              </div>
+              <input type="text" name="vencto_experiencia" class="form-control"  value="{{ contrato.vencto_experiencia|date:'d/m/Y'}}" id="datafin" onkeypress="$(this).mask('99/99/9999');">
             </div>
 
             <div class="input-group mb-3">
@@ -81,27 +101,6 @@
                 <span class="input-group-text">Data de Retratação</span>
               </div>
               <input type="text" name="data_retratacao" class="form-control"  value="{{ contrato.data_retratacao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
-            </div>
-
-            <div class="input-group mb-3">
-              <!-- em_experiencia -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Em Experiência</span>
-              </div>
-              {% render_field form.em_experiencia class+="form-control" %}
-
-              <!-- prazo_experiencia -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Prazo Experiência</span>
-              </div>
-              {% render_field form.prazo_experiencia class+="form-control" %}
-
-
-              <!-- vencto_experiencia -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Vencimento</span>
-              </div>
-              <input type="text" name="vencto_experiencia" class="form-control"  value="{{ contrato.vencto_experiencia|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
             </div>
 
             <div class="input-group mb-3">
@@ -173,22 +172,6 @@
   </div>
 </div>
 
-  <script>
-    $("#id_empresa").change(function () {
-      var url = $("#contratoForm").attr("data-funcionarios-url");  // get the url of the `load_cities` view
-      var empresaId = $(this).val();  // get the selected country ID from the HTML input
-
-      $.ajax({                       // initialize an AJAX request
-        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
-        data: {
-          'empresa': empresaId       // add the country id to the GET parameters
-        },
-        success: function (data) {   // `data` is the return of the `load_cities` view function
-          $("#id_funcionario").html(data);  // replace the contents of the city input with the data that came from the server
-        }
-      });
-
-    });
-  </script>
+<script language="JavaScript" type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
 {% endblock %}

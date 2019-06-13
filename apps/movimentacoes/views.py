@@ -27,11 +27,15 @@ class MovimentacaoList(ListView):
 
     def get_queryset(self):
         filter_func = self.request.GET.get('pesqfunc', None)
-        order = 'funcionario'
+        filter_evento = self.request.GET.get('pesqevento', None)
+        order = ('funcionario')
         if filter_func:
-            new_context = Movimentacao.objects.filter(funcionario__nome__contains=filter_func, ).order_by(order)
+            new_context = Movimentacao.objects.filter(funcionario__nome__contains=filter_func, )
         else:
-            new_context = Movimentacao.objects.order_by(order).all()
+            if filter_evento:
+                new_context = Movimentacao.objects.filter(evento__nome__contains=filter_evento, )
+            else:
+                new_context = Movimentacao.objects.all()
         return new_context
 
 

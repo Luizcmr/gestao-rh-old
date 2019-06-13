@@ -5,6 +5,9 @@ from django.urls import reverse
 class Evento(models.Model):
     nome = models.CharField(max_length=50, help_text="Nome do Evento")
 
+    class Meta:
+        ordering = ['nome']
+
     def __str__(self):
         return self.nome
 

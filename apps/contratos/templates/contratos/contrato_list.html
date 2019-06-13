@@ -37,15 +37,15 @@
                     <tr>
                       <td>{{ contrato.funcionario }}</td>
                       <td>{{ contrato.id }}</td>
-                      <td>{{ contrato.data_admissao }}</td>
+                      <td>{{ contrato.data_admissao|date:'d/m/Y' }}</td>
                       <td>{{ contrato.empresa }}</td>
                       <td>{{ contrato.funcao }}</td>
                       <td>
                         <a href="{% url 'edit_contrato' pk=contrato.id %}"
-                           <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px"></i>
+                           <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px" title="Alterar Contrato"></i>
                         </a>
                         <a href="{% url 'deleta_contrato' pk=contrato.id %}"
-                           <i class="fa fa-trash" style="font-size:20px;color:red"></i>
+                           <i class="fa fa-trash" style="font-size:20px;color:red" title="Excluir Contrato"></i>
                         </a>
                       </td>
                     </tr>

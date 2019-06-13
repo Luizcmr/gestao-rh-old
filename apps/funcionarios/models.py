@@ -31,7 +31,7 @@ class Funcionario(models.Model):
 
     nome = models.CharField(max_length=50, help_text="Nome do funcionário")
     #cpf=BRCPFField(max_length=11)
-    cpf = models.CharField(max_length=14, help_text="CPF do funcionário")
+    cpf = models.CharField(max_length=14, help_text="CPF do funcionário", unique=True)
     data_nasc = models.DateField(help_text="Data de Nascimento", null=True, blank=True )
     nacionalidade = models.CharField(max_length=15, help_text="Nacionalidade", null=True, blank=True)
     naturalidade = models.CharField(max_length=25, help_text="Naturalidade", null=True, blank=True)
@@ -84,9 +84,14 @@ class Funcionario(models.Model):
     departamentos = models.ForeignKey(Departamento, on_delete=models.PROTECT, null=True, blank=True)
     funcao = models.ForeignKey(Funcao, on_delete=models.PROTECT, null=True, blank=True)
     empresa = models.ForeignKey(Empresa, on_delete=models.PROTECT, null=True, blank=True)
+    data_movto = models.DateField(help_text="Data de Movimentação", null=True, blank=True)
+
+    class Meta:
+        ordering = ['nome']
 
     def save(self, *args, **kwargs):
         self.cpf = chr_remove(self.cpf, ".-/")
+
         super(Funcionario, self).save(*args, **kwargs)
 
     @property

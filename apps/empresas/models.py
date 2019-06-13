@@ -19,6 +19,9 @@ class Empresa(models.Model):
     telefones = models.CharField(max_length=40, help_text='Telefones', null=True, blank=True )
     email = models.CharField(max_length=100, help_text='Email', null=True, blank=True )
 
+    class Meta:
+        ordering = ['nome']
+
     def save(self, force_insert=False, force_update=False, *args, **kwargs):
         self.cnpj = chr_remove(self.cnpj, ".-/")
         super(Empresa, self).save(*args, **kwargs)
