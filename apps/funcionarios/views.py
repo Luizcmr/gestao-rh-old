@@ -66,10 +66,10 @@ class FuncionarioList(ListView):
         filter_cpf = self.request.GET.get('pesqcpf', None)
         order = 'nome'
         if filter_nome:
-            new_context = Funcionario.objects.filter(nome__contains=filter_nome, ).order_by(order)
+            new_context = Funcionario.objects.filter(nome__icontains=filter_nome, ).order_by(order)
         else:
             if filter_cpf:
-               new_context = Funcionario.objects.filter(cpf__contains=filter_cpf, ).order_by(order)
+               new_context = Funcionario.objects.filter(cpf__icontains=filter_cpf, ).order_by(order)
             else:
                new_context = Funcionario.objects.order_by(order).all()
         return new_context

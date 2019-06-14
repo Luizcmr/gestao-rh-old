@@ -38,10 +38,10 @@ class EmpresaList(ListView):
         filter_cnpj = self.request.GET.get('pesqcnpj', None)
         order = 'nome'
         if filter_nome:
-            new_context = Empresa.objects.filter(nome__contains=filter_nome, ).order_by(order)
+            new_context = Empresa.objects.filter(nome__icontains=filter_nome, ).order_by(order)
         else:
             if filter_cnpj:
-               new_context = Empresa.objects.filter(cnpj__contains=filter_cnpj, ).order_by(order)
+               new_context = Empresa.objects.filter(cnpj__icontains=filter_cnpj, ).order_by(order)
             else:
                new_context = Empresa.objects.order_by(order).all()
 

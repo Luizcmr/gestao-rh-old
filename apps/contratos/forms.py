@@ -11,4 +11,4 @@ class ContratoForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['funcionario'].queryset = Funcionario.objects.none()
+        self.fields['funcionario'].queryset = Funcionario.objects.filter(empresa_id=1)

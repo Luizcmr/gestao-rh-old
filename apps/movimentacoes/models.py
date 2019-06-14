@@ -19,9 +19,9 @@ class Movimentacao(models.Model):
    class Meta:
       ordering = ['funcionario','data_evento']
 
-   @property
-   def mempresa(self):
-        return Empresa.objects.all()
+   #@property
+   #def mempresa(self):
+   #     return Empresa.objects.all()
 
 
    def __str__(self):

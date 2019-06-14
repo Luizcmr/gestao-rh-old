@@ -14,6 +14,14 @@ $("#id_empresa").change(function () {
 
 });
 
+$(document).ready(function () {
+$('#dtHorizontalVerticalExample').DataTable({
+"scrollX": true,
+"scrollY": 200,
+});
+$('.dataTables_length').addClass('bs-select');
+});
+
 function calculaDataFin() {
 var datainicial = document.getElementById("dataini").value;
 var dias = parseInt(document.getElementById("dias").value);

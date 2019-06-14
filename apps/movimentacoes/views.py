@@ -30,10 +30,10 @@ class MovimentacaoList(ListView):
         filter_evento = self.request.GET.get('pesqevento', None)
         order = ('funcionario')
         if filter_func:
-            new_context = Movimentacao.objects.filter(funcionario__nome__contains=filter_func, )
+            new_context = Movimentacao.objects.filter(funcionario__nome__icontains=filter_func, )
         else:
             if filter_evento:
-                new_context = Movimentacao.objects.filter(evento__nome__contains=filter_evento, )
+                new_context = Movimentacao.objects.filter(evento__nome__icontains=filter_evento, )
             else:
                 new_context = Movimentacao.objects.all()
         return new_context

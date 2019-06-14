@@ -16,7 +16,9 @@
           <form name="form1" method="post" enctype="multipart/form-data">
             <!-- Não se esqueça dessa tag -->
             {% csrf_token %}
-            <img src="{{ funcionario.foto.url }}" height="100" width="100">
+            {% if funcionario.foto %}
+               <img src="{{ funcionario.foto.url }}" height="100" width="100">
+            {% endif %}
             <p></p>
             <!-- CPF -->
             <div class="input-group mb-3">

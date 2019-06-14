@@ -11,7 +11,6 @@ class ContratoCreate(CreateView):
     form_class = ContratoForm
 
     def form_valid(self, form):
-        # gravando usuário no cadastro de contrato
         contrato = form.save(commit=False)
         v_login = 'teste'
         contrato.tipo_ope = 'I'
@@ -40,10 +39,10 @@ class ContratoList(ListView):
         filter_emp = self.request.GET.get('pesqemp', None)
         order = 'funcionario'
         if filter_func:
-            new_context = Contrato.objects.filter(funcionario__nome__contains=filter_func, ).order_by(order)
+            new_context = Contrato.objects.filter(funcionario__nome__icontains=filter_func, ).order_by(order)
         else:
             if filter_emp:
-               new_context = Contrato.objects.filter(empresa__nome__contains=filter_emp, ).order_by(order)
+               new_context = Contrato.objects.filter(empresa__nome__icontains=filter_emp, ).order_by(order)
             else:
                new_context = Contrato.objects.order_by(order).all()
         return new_context
