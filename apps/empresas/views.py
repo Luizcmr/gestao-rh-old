@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -6,7 +7,8 @@ from django.views.generic import ListView
 from .models import Empresa
 
 
-class EmpresaCreate(CreateView):
+class EmpresaCreate(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
+    permission_required = 'empresas.add_empresa'
     model = Empresa
     fields = ['nome','cnpj','fantasia','insc_est','insc_mun','endereco',
               'numero','complemento','bairro','cidade','uf','cep','telefones','email']
@@ -22,13 +24,15 @@ class EmpresaCreate(CreateView):
         return redirect('lista_empresas')
 
 
-class EmpresaEdit(UpdateView):
+class EmpresaEdit(LoginRequiredMixin,PermissionRequiredMixin,UpdateView):
+    permission_required = 'empresas.edit_empresa'
     model = Empresa
     fields = ['nome', 'cnpj', 'fantasia', 'insc_est', 'insc_mun', 'endereco',
               'numero', 'complemento', 'bairro', 'cidade', 'uf', 'cep', 'telefones', 'email']
 
 
-class EmpresaList(ListView):
+class EmpresaList(LoginRequiredMixin,PermissionRequiredMixin,ListView):
+    permission_required = 'empresas.view_empresa'
     model = Empresa
     fields = ['nome', 'cnpj', 'fantasia', 'insc_est', 'insc_mun', 'endereco',
               'numero', 'complemento', 'bairro', 'cidade', 'uf', 'cep', 'telefones', 'email']
@@ -47,6 +51,7 @@ class EmpresaList(ListView):
 
         return new_context
 
-class EmpresaDelete(DeleteView):
+class EmpresaDelete(LoginRequiredMixin,PermissionRequiredMixin,DeleteView):
+    permission_required = 'empresas.delete_empresa'
     model = Empresa
     success_url = reverse_lazy("lista_empresas")

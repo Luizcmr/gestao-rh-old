@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
@@ -7,7 +8,8 @@ from apps.movimentacoes.models import Movimentacao
 from .forms import FuncionarioForm
 
 
-class FuncionarioCreate(CreateView):
+class FuncionarioCreate(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
+    permission_required = 'funcioanarios.add_funcionario'
     model = Funcionario
     fields = ['nome','cpf','data_nasc','nacionalidade','naturalidade', 'sexo',
               'estado_civil','nome_conjuge','nome_pai','nome_mae','num_dependentes',
@@ -31,7 +33,8 @@ class FuncionarioCreate(CreateView):
         return redirect('lista_funcionarios')
 
 
-class FuncionarioEdit(UpdateView):
+class FuncionarioEdit(LoginRequiredMixin,PermissionRequiredMixin,UpdateView):
+    permission_required = 'funcionarios.edit_funcionario'
     model = Funcionario
     fields = ['nome', 'cpf', 'data_nasc', 'nacionalidade', 'naturalidade', 'sexo',
               'estado_civil', 'nome_conjuge', 'nome_pai', 'nome_mae', 'num_dependentes',
@@ -47,7 +50,8 @@ class FuncionarioEdit(UpdateView):
 
 
 
-class FuncionarioList(ListView):
+class FuncionarioList(LoginRequiredMixin,PermissionRequiredMixin,ListView):
+    permission_required = 'funcionarios.view_funcionario'
     model = Funcionario
     fields = ['nome', 'cpf', 'data_nasc', 'nacionalidade', 'naturalidade', 'sexo',
               'estado_civil', 'nome_conjuge', 'nome_pai', 'nome_mae', 'num_dependentes',
@@ -75,12 +79,14 @@ class FuncionarioList(ListView):
         return new_context
 
 
-class FuncionarioDelete(DeleteView):
+class FuncionarioDelete(LoginRequiredMixin,PermissionRequiredMixin,DeleteView):
+    permission_required = 'funcionarios.delete_funcionario'
     model = Funcionario
     success_url = reverse_lazy("lista_funcionarios")
 
 
 class FuncionarioTransfere(UpdateView):
+    permission_required = 'funcionarios.edit_funcionario'
     model = Funcionario
     fields = ['nome', 'cpf', 'empresa', 'data_movto']
     template_name_suffix = '_transferir'
@@ -89,16 +95,15 @@ class FuncionarioTransfere(UpdateView):
 
         """If the form is valid, save the associated model."""
         func = form.save(commit=False)
-        movi_count = Movimentacao.objects.filter(evento=4, funcionario=func.id).count()
 
-        if movi_count == 0:
-            obs = "Funcionário transferido para empresa " + str(func.empresa)
-            mov = Movimentacao.objects.create(funcionario_id=func.id,
-                                              data_evento=func.data_movto,
-                                              data_para_conclusao=func.data_movto,
-                                              concluido_em=func.data_movto,
-                                              evento_id=4,
-                                              observacao=obs
-                                              )
+        # Salvando dados da transferencia em movimentação do funcionario
+        obs = "Funcionário transferido para empresa " + str(func.empresa)
+        mov = Movimentacao.objects.create(funcionario_id=func.id,
+                                          data_evento=func.data_movto,
+                                          data_para_conclusao=func.data_movto,
+                                          concluido_em=func.data_movto,
+                                          evento_id=4,
+                                          observacao=obs
+                                          )
         self.object = form.save()
         return super().form_valid(form)

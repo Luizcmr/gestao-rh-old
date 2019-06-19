@@ -1,12 +1,15 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 from .models import Contrato, Funcionario
 from .forms import ContratoForm
 
 
-class ContratoCreate(CreateView):
+class ContratoCreate(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
+    permission_required = 'contratos.add_contrato'
     model = Contrato
     form_class = ContratoForm
 
@@ -19,7 +22,8 @@ class ContratoCreate(CreateView):
         return redirect('lista_contratos')
 
 
-class ContratoEdit(UpdateView):
+class ContratoEdit(LoginRequiredMixin,PermissionRequiredMixin,UpdateView):
+    permission_required = 'contratos.edit_contrato'
     model = Contrato
     fields = ['funcionario', 'empresa', 'contratado_por', 'data_admissao', 'data_registro',
               'optante_fgts', 'data_opcao', 'data_retratacao', 'banco_depositario', 'em_experiencia',
@@ -27,7 +31,8 @@ class ContratoEdit(UpdateView):
               'data_fim_aviso', 'motivo', 'data_demissao', 'data_homologacao', 'data_pagamento']
 
 
-class ContratoList(ListView):
+class ContratoList(LoginRequiredMixin,PermissionRequiredMixin,ListView):
+    permission_required = 'contratos.view_contrato'
     model = Contrato
     fields = ['funcionario', 'empresa', 'contratado_por', 'data_admissao', 'data_registro',
               'optante_fgts', 'data_opcao', 'data_retratacao', 'banco_depositario', 'em_experiencia',
@@ -48,7 +53,8 @@ class ContratoList(ListView):
         return new_context
 
 
-class ContratoDelete(DeleteView):
+class ContratoDelete(LoginRequiredMixin,PermissionRequiredMixin,DeleteView):
+    permission_required = 'contratos.delete_contrato'
     model = Contrato
     success_url = reverse_lazy("lista_contratos")
 
