@@ -14,12 +14,15 @@ $("#id_empresa").change(function () {
 
 });
 
+// Script para scrol nas tabelas
 $(document).ready(function () {
-$('#dtHorizontalVerticalExample').DataTable({
-"scrollX": true,
-"scrollY": 200,
-});
-$('.dataTables_length').addClass('bs-select');
+  $('#dtHorizontalVerticalExample').DataTable({
+    "order": [[ 3, "desc" ]],
+    "pagingType": "simple_numbers",
+    "scrollX": true,
+    "scrollY": 200,
+  });
+  $('.dataTables_length').addClass('bs-select');
 });
 
 function calculaDataFin() {

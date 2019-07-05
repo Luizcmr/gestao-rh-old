@@ -16,7 +16,7 @@ class DepartamentoCreate(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
         return redirect('lista_departamentos')
 
 class DepartamentoEdit(LoginRequiredMixin,PermissionRequiredMixin,UpdateView):
-    permission_required = 'departamentos.edit_departamento'
+    permission_required = 'departamentos.change_departamento'
     model = Departamento
     fields = ['nome']
 

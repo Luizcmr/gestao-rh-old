@@ -16,7 +16,7 @@ class FuncaoCreate(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
 
 
 class FuncaoEdit(LoginRequiredMixin,PermissionRequiredMixin,UpdateView):
-    permission_required = 'funcoes.edit_funcao'
+    permission_required = 'funcoes.change_funcao'
     model = Funcao
     fields = ['nome','salario']
 

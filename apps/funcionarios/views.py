@@ -34,7 +34,7 @@ class FuncionarioCreate(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
 
 
 class FuncionarioEdit(LoginRequiredMixin,PermissionRequiredMixin,UpdateView):
-    permission_required = 'funcionarios.edit_funcionario'
+    permission_required = 'funcionarios.change_funcionario'
     model = Funcionario
     fields = ['nome', 'cpf', 'data_nasc', 'nacionalidade', 'naturalidade', 'sexo',
               'estado_civil', 'nome_conjuge', 'nome_pai', 'nome_mae', 'num_dependentes',
@@ -85,8 +85,8 @@ class FuncionarioDelete(LoginRequiredMixin,PermissionRequiredMixin,DeleteView):
     success_url = reverse_lazy("lista_funcionarios")
 
 
-class FuncionarioTransfere(UpdateView):
-    permission_required = 'funcionarios.edit_funcionario'
+class FuncionarioTransfere(LoginRequiredMixin,PermissionRequiredMixin,UpdateView):
+    permission_required = 'funcionarios.change_funcionario'
     model = Funcionario
     fields = ['nome', 'cpf', 'empresa', 'data_movto']
     template_name_suffix = '_transferir'

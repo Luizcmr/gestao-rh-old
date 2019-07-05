@@ -3,15 +3,24 @@
 {% block title %} Movimentação {% endblock %}
 
 {% block main %}
-
-    <h2>Tem certeza que deseja Excluir a Movimentação abaixo?</h2>
-    <h3>Funcionário: {{ movimentacao.funcionario }}</h3>
-    <h3>Evento: {{ movimentacao.evento }}</h3>
-    <h3>Data do Evento: {{ movimentacao.data_evento }}</h3>
-    <form method="POST" ENCTYPE="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit" class="btn btn-danger">Excluir</button>
-    </form>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+            <h2>Tem certeza que deseja Excluir a Movimentação abaixo?</h2>
+            <h3>Funcionário: {{ movimentacao.funcionario }}</h3>
+            <h3>Evento: {{ movimentacao.evento }}</h3>
+            <h3>Data do Evento: {{ movimentacao.data_evento }}</h3>
+            <form method="POST" ENCTYPE="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 

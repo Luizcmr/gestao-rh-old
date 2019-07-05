@@ -24,7 +24,7 @@ class EmpresaCreate(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
         return redirect('lista_empresas')
 
 
-class EmpresaEdit(LoginRequiredMixin,PermissionRequiredMixin,UpdateView):
+class EmpresaEdit(PermissionRequiredMixin,LoginRequiredMixin,UpdateView):
     permission_required = 'empresas.edit_empresa'
     model = Empresa
     fields = ['nome', 'cnpj', 'fantasia', 'insc_est', 'insc_mun', 'endereco',
