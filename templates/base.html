@@ -8,45 +8,35 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-
     <!-- jQuery -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> -->
+    <script language="JavaScript" type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
     <script language="JavaScript" type="text/javascript" src="{% static 'js/jquery.mask.js' %}"></script>
     <script language="JavaScript" type="text/javascript" src="{% static 'js/jquery.mask.min.js' %}"></script>
-    <script language="JavaScript" type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
-    <script language="JavaScript" type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
-    <script language="JavaScript" type="text/javascript" src="{% static 'js/mdb.js' %}"></script>
-    <script language="JavaScript" type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
-    <script language="JavaScript" type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
-    <!--  <script language="JavaScript" type="text/javascript" src="{% static 'bootstrap/js/MascaraValidacao.js' %}"></script> -->
 
-    <!-- MDBootstrap Datatables  JS-->
-    <script type="text/javascript" src="{% static 'js/addons/datatables.js' %}"></script>
-    <!-- <script type="text/javascript" src="{% static 'js/addons/datatables.min.js' %}"></script> -->
-    <!-- bootstrap -->
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script language="JavaScript" type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 
+    <script language="JavaScript" type="text/javascript" src="{% static 'bootstrap/js/MascaraValidacao.js' %}"></script>
     <script language="JavaScript" type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
+    <!-- bootstrap -->
+    <!-- <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-
-
+    <!-- font awesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="{% static 'stick-footer.css' %}">
-    <link rel="stylesheet" href="{% static 'css/mdb.css' %}">
-    <link rel="stylesheet" href="{% static 'css/mdb.lite.css' %}">
+   <!--  <link rel="stylesheet" href="{% static 'stick-footer.css' %}"> -->
     <link rel="stylesheet" href="{% static 'css/mdb.lite.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
 
     <!-- MDBootstrap Datatables CSS -->
-    <link rel="stylesheet" href="{% static 'css/addons/datatables.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/addons/datatables.css' %}">
+
+    <!-- MDBootstrap Datatables  JS-->
+    <script type="text/javascript" src="{% static 'js/addons/datatables.js' %}"></script>
 
     <title>{% block title %}{% endblock %}</title>
 
@@ -87,8 +77,14 @@
                       <a class="dropdown-item" href="{% url 'lista_movimentacoes' %}">Movimentações</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link  active" href="#">Relatórios</a>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Relatórios
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="{% url 'contratos_em_exp' %}">Contratos Em Experiência</a>
+                    </div>
+
                 </li>
             </ul>
             <span class="navbar-text">

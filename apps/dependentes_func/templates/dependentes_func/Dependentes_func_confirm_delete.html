@@ -4,11 +4,22 @@
 
 {% block main %}
 
-    <h2>Tem certeza que deseja Excluir o Dependente - {{ dependentes_func.nome }}?</h2>
-    <form method="POST" ENCTYPE="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit" class="btn btn-danger">Excluir</button>
-    </form>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+            <h2>Tem certeza que deseja Excluir o Dependente - {{ dependentes_func.nome }}?</h2>
+            <form method="POST" ENCTYPE="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
 

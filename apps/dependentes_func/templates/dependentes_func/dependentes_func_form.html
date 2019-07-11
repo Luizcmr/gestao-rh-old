@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load bootstrap %}
 {% load widget_tweaks %}
 
@@ -10,7 +11,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="card">
         <div class="card-body">
-          <form method="post">
+          <form name="form" method="post" enctype="multipart/form-data">
             <h5 class="card-title">Cadastro de Dependentes</h5>
             <!-- Não se esqueça dessa tag -->
             {% csrf_token %}
@@ -23,6 +24,14 @@
               {% render_field form.nome class+="form-control" %}
             </div>
 
+            <!-- CPF -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">CPF do Dependente</span>
+              </div>
+              <input type="text" name="cpf" class="form-control"  onBlur="ValidarCPF(form.cpf);" onKeyPress="MascaraCPF(form.cpf);" maxlength="14">
+
+            </div>
               <!-- estado_civil -->
             <div class="input-group mb-3">
               <div class="input-group-prepend">

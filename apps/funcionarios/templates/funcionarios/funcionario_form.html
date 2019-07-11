@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static%}
+{% load static %}
 {% load bootstrap %}
 {% load widget_tweaks %}
 
@@ -25,11 +25,9 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">CPF</span>
               </div>
-              <input type="text" name="cpf" class="form-control" value="{{ funcionario.mcpf }}" onkeypress="$(this).mask('999.999.999-99');" maxlength="14">
-              <!-- <input type="text" name="cpf" class="form-control" value="{{ funcionario.cpf }}"  onKeyPress="MascaraCPF(form1.cpf);"
-                     onBlur="ValidarCPF(form1.cpf);" maxlength="14"> -->
+             <!--  <input type="text" name="cpf" class="form-control" value="{{ funcionario.mcpf }}" onkeypress="$(this).mask('999.999.999-99');" maxlength="14"> -->
+              <input type="text" name="cpf" class="form-control" value="{{ funcionario.mcpf }}" onBlur="ValidarCPF(form1.cpf);" onKeyPress="MascaraCPF(form1.cpf);" maxlength="14">
 
-             <!--  {% render_field form.cpf class+="form-control" %} -->
             </div>
 
             <!-- Nome -->
@@ -442,7 +440,7 @@
                  <ul>
                  {% for dependentes_func in object.dependentes_func_set.all %}
                     <li>
-                        <a href="{{ dependentes_func.nome }} "> {{ dependentes_func.nome }} </a>
+                        <a> {{ dependentes_func.nome }} </a>
                         <a href="{% url 'deleta_dependentes_func' pk=dependentes_func.id %}"
                          <i class="fa fa-trash" style="font-size:20px;color:red"></i>
                         </a>

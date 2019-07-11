@@ -124,7 +124,7 @@ function formataCampo(campo, Mascara, evento) {
 
         var posicaoCampo = 0;
         var NovoValorCampo="";
-        var TamanhoMascara = campoSoNumeros.length;;
+        var TamanhoMascara = campoSoNumeros.length;
 
         if (Digitato != 8) { // backspace
                 for(i=0; i<= TamanhoMascara; i++) {
@@ -146,7 +146,6 @@ function formataCampo(campo, Mascara, evento) {
                 return true;
         }
 }
-Ainda, nesse código, inseri uma Máscara para RG, muito fácil:
 
 //adiciona mascara ao RG
 function MascaraRG(rg){

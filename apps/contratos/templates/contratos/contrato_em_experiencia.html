@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contratos de Experiência a vencer{% endblock %}
+
+{% block main %}
+<div class="jumbotron">
+  <h5>Contratos de Experiência a vencer</h5>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+              <!-- Retiramdo pesquisa
+              <form >
+                <div class="input-group mb-2 ">
+                   <label for="pesqFunc" class="sr-only">Funcionário</label>
+                   <input type="text" class="form-control col-md-4" id="pesqFunc" name="pesqfunc" placeholder="Funcionário">
+                   <label for="pesqEmp" class="sr-only">Empresa</label>
+                   <input type="text" class="form-control col-md-4" id="pesqEmp" name="pesqemp" placeholder="Empresa">
+                   <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+                </div>
+              </form>
+              -->
+              <div class="table-responsive">
+                <table id="dtHorizontalVerticalExample" class="table table-striped table-bordered table-sm " cellspacing="0" width="100%">
+                  <thead class="thead-dark">
+                  <tr>
+                    <th class="th-sm">Nome</th>
+                    <th>Data de Admissão</th>
+                    <th>Em Emperiência</th>
+                    <th>Prazo</th>
+                    <th>Vencimento</th>
+                    <th>Ações</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% for contrato in object_list %}
+                    <tr>
+                      <td>{{ contrato.funcionario }}</td>
+                      <td>{{ contrato.data_admissao|date:'d/m/Y' }}</td>
+                      <td>{{ contrato.em_experiencia }}</td>
+                      <td>{{ contrato.prazo_experiencia }}</td>
+                      <td>{{ contrato.vencto_experiencia|date:'d/m/Y' }}</td>
+                      <td>
+                        <a href="{% url 'edit_contrato' pk=contrato.id %}"
+                           <i class="fa fa-edit"  style="font-size:20px;color:green;margin-right:20px" title="Alterar Contrato"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+          <hr />
+          <div class="text-right">
+            <a href="{% url 'contrato-exportar-excel' %}" class="btn btn-primary">
+              Gerar Excel
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
