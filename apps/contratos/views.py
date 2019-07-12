@@ -6,6 +6,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
+from xlwt import easyxf
+
 from .models import Contrato, Funcionario
 from .forms import ContratoForm
 from datetime import datetime
@@ -92,19 +94,28 @@ class ContratoExportarExcel(LoginRequiredMixin,PermissionRequiredMixin,View):
 
         row_num = 0
 
+        ws.col(0).width = 10000
+        ws.col(1).width = 4000
+        ws.col(2).width = 4000
+        ws.col(3).width = 4000
+        ws.col(4).width = 4000
+
+        style_border = easyxf('border: bottom thin, left thin, top thin, right thin;'
+                              'pattern: pattern solid, fore_colour black;'
+                              'font: color white')
+
         font_style = xlwt.XFStyle()
         font_style.font.bold = True
         ddata = datetime.now()
         ws.write(row_num, 0, ddata.strftime('%d/%m/%Y'), font_style)
-        ws.write(row_num, 2, 'Sistema Gestão de RH', font_style)
+        ws.write(row_num, 1, 'Sistema Gestão de RH', font_style)
         row_num = 2
         ws.write(row_num, 0, 'Contrato de experiência a Vencer', font_style)
         row_num = 4
-
         columns = ['Funcionário', 'Data Admissão', 'Em Experiência', 'Prazo', 'Vencimento']
 
         for col_num in range(len(columns)):
-            ws.write(row_num, col_num, columns[col_num], font_style)
+            ws.write(row_num, col_num, columns[col_num], style_border)
 
         font_style = xlwt.XFStyle()
 
@@ -126,6 +137,8 @@ class ContratoExportarExcel(LoginRequiredMixin,PermissionRequiredMixin,View):
 
 
 def load_funcionarios(request):
-    empresa_id = request.GET.get('empresa')
-    funcionarios = Funcionario.objects.filter(empresa_id=empresa_id).order_by('nome')
+    id_empresa = 0
+    funcionarios = Funcionario.objects.filter(empresa_id=id_empresa).order_by('nome')
+    id_empresa = request.GET.get('empresa')
+    funcionarios = Funcionario.objects.filter(empresa_id=id_empresa).order_by('nome')
     return render(request, 'hr/funcionario_dropdown_list_options.html', {'funcionarios': funcionarios})
