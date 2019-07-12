@@ -11,4 +11,13 @@ class ContratoForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['funcionario'].queryset = Funcionario.objects.filter(empresa_id=1)
+        self.fields['funcionario'].queryset = Funcionario.objects.none()
+
+        if 'empresa' in self.data:
+            try:
+                empresa_id = int(self.data.get('empresa'))
+                self.fields['funcionario'].queryset = Funcionario.objects.filter(empresa_id=empresa_id).order_by('nome')
+            except (ValueError, TypeError):
+                pass  # invalid input from the client; ignore and fallback to empty funcionario queryset
+        elif self.instance.pk:
+            self.fields['funcionario'].queryset = self.instance.empresa.funcionario_set.order_by('nome')
