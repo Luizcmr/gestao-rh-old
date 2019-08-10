@@ -9,7 +9,7 @@ from .forms import FuncionarioForm
 
 
 class FuncionarioCreate(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
-    permission_required = 'funcioanarios.add_funcionario'
+    permission_required = 'funcionarios.add_funcionario'
     model = Funcionario
     fields = ['nome','cpf','data_nasc','nacionalidade','naturalidade', 'sexo',
               'estado_civil','nome_conjuge','nome_pai','nome_mae','num_dependentes',
