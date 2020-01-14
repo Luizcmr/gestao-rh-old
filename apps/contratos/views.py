@@ -1,8 +1,9 @@
+import io
 
+from reportlab.pdfgen import canvas
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
@@ -33,7 +34,7 @@ class ContratoEdit(LoginRequiredMixin,PermissionRequiredMixin,UpdateView):
     fields = ['funcionario', 'empresa', 'contratado_por', 'data_admissao', 'data_registro',
               'optante_fgts', 'data_opcao', 'data_retratacao', 'banco_depositario', 'em_experiencia',
               'prazo_experiencia', 'vencto_experiencia', 'funcao', 'salario', 'data_inicio_aviso',
-              'data_fim_aviso', 'motivo', 'data_demissao', 'data_homologacao', 'data_pagamento']
+              'data_fim_aviso', 'motivo', 'data_demissao', 'data_homologacao', 'data_pagamento','horario','data_inicio_horario']
 
 
 class ContratoList(LoginRequiredMixin,PermissionRequiredMixin,ListView):
@@ -42,7 +43,7 @@ class ContratoList(LoginRequiredMixin,PermissionRequiredMixin,ListView):
     fields = ['funcionario', 'empresa', 'contratado_por', 'data_admissao', 'data_registro',
               'optante_fgts', 'data_opcao', 'data_retratacao', 'banco_depositario', 'em_experiencia',
               'prazo_experiencia', 'vencto_experiencia', 'funcao', 'salario', 'data_inicio_aviso',
-              'data_fim_aviso', 'motivo', 'data_demissao', 'data_homologacao', 'data_pagamento']
+              'data_fim_aviso', 'motivo', 'data_demissao', 'data_homologacao', 'data_pagamento','horario','data_inicio_horario']
 
     def get_queryset(self):
         filter_func = self.request.GET.get('pesqfunc', None)
@@ -71,7 +72,7 @@ class ContratoEmExp(LoginRequiredMixin,PermissionRequiredMixin,ListView):
     fields = ['funcionario', 'empresa', 'contratado_por', 'data_admissao', 'data_registro',
               'optante_fgts', 'data_opcao', 'data_retratacao', 'banco_depositario', 'em_experiencia',
               'prazo_experiencia', 'vencto_experiencia', 'funcao', 'salario', 'data_inicio_aviso',
-              'data_fim_aviso', 'motivo', 'data_demissao', 'data_homologacao', 'data_pagamento']
+              'data_fim_aviso', 'motivo', 'data_demissao', 'data_homologacao', 'data_pagamento','horario','data_inicio_horario']
 
     def get_queryset(self):
         order = 'vencto_experiencia'
@@ -79,10 +80,7 @@ class ContratoEmExp(LoginRequiredMixin,PermissionRequiredMixin,ListView):
         new_context = Contrato.objects.filter(vencto_experiencia__gt=ddata,).order_by(order)
         return new_context
 
-
-
-
-class ContratoExportarExcel(LoginRequiredMixin,PermissionRequiredMixin,View):
+class ContratoEmExpExportarExcel(LoginRequiredMixin,PermissionRequiredMixin,View):
     permission_required = 'contratos.view_contrato'
 
     def get(self, request):
@@ -95,10 +93,11 @@ class ContratoExportarExcel(LoginRequiredMixin,PermissionRequiredMixin,View):
         row_num = 0
 
         ws.col(0).width = 10000
-        ws.col(1).width = 4000
+        ws.col(1).width = 10000
         ws.col(2).width = 4000
         ws.col(3).width = 4000
-        ws.col(4).width = 4000
+        ws.col(4).width = 2000
+        ws.col(5).width = 4000
 
         style_border = easyxf('border: bottom thin, left thin, top thin, right thin;'
                               'pattern: pattern solid, fore_colour black;'
@@ -107,12 +106,12 @@ class ContratoExportarExcel(LoginRequiredMixin,PermissionRequiredMixin,View):
         font_style = xlwt.XFStyle()
         font_style.font.bold = True
         ddata = datetime.now()
-        ws.write(row_num, 0, ddata.strftime('%d/%m/%Y'), font_style)
+        ws.write(row_num, 0, ddata.strftime('%d/%m/%Y %H:%M'), font_style)
         ws.write(row_num, 1, 'Sistema Gestão de RH', font_style)
         row_num = 2
         ws.write(row_num, 0, 'Contrato de experiência a Vencer', font_style)
         row_num = 4
-        columns = ['Funcionário', 'Data Admissão', 'Em Experiência', 'Prazo', 'Vencimento']
+        columns = ['Funcionário', 'Empresa', 'Data Admissão', 'Em Experiência', 'Prazo', 'Vencimento']
 
         for col_num in range(len(columns)):
             ws.write(row_num, col_num, columns[col_num], style_border)
@@ -126,10 +125,11 @@ class ContratoExportarExcel(LoginRequiredMixin,PermissionRequiredMixin,View):
         row_num = 5
         for registro in registros:
             ws.write(row_num, 0, registro.funcionario.nome, font_style)
-            ws.write(row_num, 1, registro.data_admissao.strftime('%d/%m/%Y'), font_style)
-            ws.write(row_num, 2, registro.em_experiencia, font_style)
-            ws.write(row_num, 3, registro.prazo_experiencia, font_style)
-            ws.write(row_num, 4, registro.vencto_experiencia.strftime('%d/%m/%Y'), font_style)
+            ws.write(row_num, 1, registro.funcionario.empresa.nome, font_style)
+            ws.write(row_num, 2, registro.data_admissao.strftime('%d/%m/%Y'), font_style)
+            ws.write(row_num, 3, registro.em_experiencia, font_style)
+            ws.write(row_num, 4, registro.prazo_experiencia, font_style)
+            ws.write(row_num, 5, registro.vencto_experiencia.strftime('%d/%m/%Y'), font_style)
             row_num += 1
 
         wb.save(response)
@@ -142,3 +142,51 @@ def load_funcionarios(request):
     id_empresa = request.GET.get('empresa')
     funcionarios = Funcionario.objects.filter(empresa_id=id_empresa).order_by('nome')
     return render(request, 'hr/funcionario_dropdown_list_options.html', {'funcionarios': funcionarios})
+
+class ContratoEmExpExportarPdf(LoginRequiredMixin,PermissionRequiredMixin,View):
+    permission_required = 'contratos.view_contrato'
+
+    def get(self, request):
+        response = HttpResponse(content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="Contratos-Em-Experiencia.pdf"'
+        ddata = datetime.now()
+
+        buffer = io.BytesIO()
+        p = canvas.Canvas(buffer)
+        p.setFont('Helvetica',10)
+
+        p.drawString(20, 810, ddata.strftime('%d/%m/%Y'))
+        p.drawString(185, 800, 'Relatorio de Contrato em Experiência a Vencer')
+        p.drawString(520, 810, ddata.strftime('%H:%M'))
+
+        p.setFont('Helvetica', 8)
+
+        p.drawString(20, 770, 'Funcionário')
+        p.drawString(210, 770, 'Empresa')
+        p.drawString(400, 770, 'Admissão')
+        p.drawString(460, 770, 'Prazo')
+        p.drawString(520, 770, 'Vencimento')
+
+        p.drawString(0, 760, '_' * 150)
+
+        order = 'vencto_experiencia'
+        contratosemexp = Contrato.objects.filter(vencto_experiencia__gt=ddata,).order_by(order)
+
+        y = 740
+
+        for contrato in contratosemexp:
+            p.drawString(20, y, (contrato.funcionario.nome))
+            p.drawString(210, y, (contrato.empresa.nome))
+            p.drawString(400, y, (contrato.data_admissao.strftime('%d/%m/%Y')))
+            p.drawString(460, y, (str(contrato.prazo_experiencia)))
+            p.drawString(520, y, (contrato.vencto_experiencia.strftime('%d/%m/%Y')))
+            y -= 20
+
+        p.showPage()
+        p.save()
+
+        pdf = buffer.getvalue()
+        buffer.close()
+        response.write(pdf)
+
+        return response

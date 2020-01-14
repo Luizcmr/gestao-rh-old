@@ -7,7 +7,7 @@ from .models import Dependentes_func
 
 class Dependentes_funcCreate(CreateView):
     model = Dependentes_func
-    fields = ['nome', 'cpf','parentesco','data_nasc']
+    fields = ['nome', 'cpf','parentesco','data_nasc', 'paga_pensao']
 
     def post(self, request, *args, **kwargs):
         form = self.get_form()

@@ -3,10 +3,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+  {% block head %}
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 
     <!-- jQuery -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
@@ -16,8 +18,8 @@
     <script language="JavaScript" type="text/javascript" src="{% static 'js/jquery.mask.min.js' %}"></script>
 
     <script language="JavaScript" type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-
     <script language="JavaScript" type="text/javascript" src="{% static 'bootstrap/js/MascaraValidacao.js' %}"></script>
+
     <script language="JavaScript" type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
     <!-- bootstrap -->
@@ -66,6 +68,8 @@
                       <a class="dropdown-item" href="{% url 'lista_departamentos' %}">Departamentos</a>
                       <a class="dropdown-item" href="{% url 'lista_funcoes' %}">Funções</a>
                       <a class="dropdown-item" href="{% url 'lista_eventos' %}">Eventos</a>
+                      <a class="dropdown-item" href="{% url 'lista_beneficios' %}">Beneficos</a>
+                      <a class="dropdown-item" href="{% url 'lista_horarios' %}">Horários</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -83,6 +87,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="{% url 'contratos_em_exp' %}">Contratos Em Experiência</a>
+                      <a class="dropdown-item" href="{% url 'eventos_a_vencer' %}">Eventos a Vencer</a>
                     </div>
 
                 </li>
@@ -93,20 +98,22 @@
             </span>
         </div>
     </nav>
+   {% endblock %}
 </head>
 <body>
   {% block main %}
     <div class="jumbotron">
     </div>
  {% endblock %}
-
 </body>
-{% block footer %}
-    <footer class="footer">
+
+
+<footer class="footer">
+  {% block footer %}
      <div class="container">
          <span class="text-muted">Sistemas Web - Ponto Sys</span>
      </div>
-    </footer>
-{% endblock %}
+  {% endblock %}
+</footer>
 
 </html>

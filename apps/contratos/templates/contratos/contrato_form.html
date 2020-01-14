@@ -12,159 +12,208 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Cadastro de Contratos</h5>
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-contrato-tab" data-toggle="tab" href="#nav-contrato" role="tab" aria-controls="nav-contrato" aria-selected="true">contrato</a>
+              <a class="nav-item nav-link" id="nav-beneficios-tab" data-toggle="tab" href="#nav-beneficios" role="tab" aria-controls="nav-beneficios" aria-selected="false">Benefícios</a>
+            </div>
+          </nav>
           <br>
-          <form method="post" enctype="multipart/form-data" id="contratoForm" data-funcionarios-url="{% url 'ajax_load_funcionarios' %}" >
-            <!-- Não se esqueça dessa tag -->
-            {% csrf_token %}
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-contrato" role="tabpanel" aria-labelledby="nav-contrato-tab">
+              <form method="post" enctype="multipart/form-data" id="contratoForm" data-funcionarios-url="{% url 'ajax_load_funcionarios' %}" >
+                <!-- Não se esqueça dessa tag -->
+                {% csrf_token %}
 
-            <!-- Empresa -->
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Empresa</span>
-              </div>
-              {% render_field form.empresa class+="form-control" %}
+                <!-- Empresa -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Empresa</span>
+                  </div>
+                  {% render_field form.empresa class+="form-control" %}
+                </div>
+
+                <!-- funcionario -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Funcionário</span>
+                  </div>
+                  {% render_field form.funcionario class+="form-control" %}
+                </div>
+
+                <!-- contratado_por -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Contratado por</span>
+                  </div>
+                  {% render_field form.contratado_por class+="form-control" %}
+                </div>
+
+                <div class="input-group mb-3">
+                  <!-- data_admissao -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Data de Admissão</span>
+                  </div>
+                  <input type="text" name="data_admissao" class="form-control"  value="{{ contrato.data_admissao|date:'d/m/Y'}}" id="dataini" onkeypress="$(this).mask('99/99/9999');">
+
+                  <!-- data_registro -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Data de Registro</span>
+                  </div>
+                  <input type="text" name="data_registro" class="form-control"  value="{{ contrato.data_registro|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+                </div>
+
+                <div class="input-group mb-3">
+                  <!-- em_experiencia -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Em Experiência</span>
+                  </div>
+                  {% render_field form.em_experiencia class+="form-control" %}
+
+                  <!-- prazo_experiencia -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Prazo Experiência</span>
+                  </div>
+                  <input onchange="calculaDataFin();" name="prazo_experiencia"  class="form-control" value="{{ contrato.prazo_experiencia}}" type="number" id="dias"  />
+
+                  <!-- vencto_experiencia -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Vencimento</span>
+                  </div>
+                  <input type="text" name="vencto_experiencia" class="form-control"  value="{{ contrato.vencto_experiencia|date:'d/m/Y'}}" id="datafin" onkeypress="$(this).mask('99/99/9999');">
+                </div>
+
+                <div class="input-group mb-3">
+                  <!-- optante_fgts -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Optante FGTS</span>
+                  </div>
+                  {% render_field form.optante_fgts class+="form-control" %}
+
+                  <!-- data_opcao -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Data de Opção</span>
+                  </div>
+                  <input type="text" name="data_opcao" class="form-control"  value="{{ contrato.data_opcao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+                </div>
+
+                <div class="input-group mb-3">
+                  <!-- banco_depositario -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Banco Depositário</span>
+                  </div>
+                  {% render_field form.banco_depositario class+="form-control" %}
+
+                  <!-- data_retratacao -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Data de Retratação</span>
+                  </div>
+                  <input type="text" name="data_retratacao" class="form-control"  value="{{ contrato.data_retratacao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+                </div>
+
+                <div class="input-group mb-3">
+                  <!-- funcao -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Função</span>
+                  </div>
+                  {% render_field form.funcao class+="form-control" %}
+
+                  <!-- salario -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Salário</span>
+                  </div>
+                  {% render_field form.salario class+="form-control" %}
+                </div>
+
+                <div class="input-group mb-3">
+                  <!-- horario -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Horário</span>
+                  </div>
+                  {% render_field form.horario class+="form-control" %}
+
+                  <!-- data_inicio_aviso -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Data de Início do Horário</span>
+                  </div>
+                  <input type="text" name="data_inicio_horario" class="form-control"  value="{{ contrato.data_inicio_horario|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+
+                </div>
+
+                <div class="input-group mb-3">
+                  <!-- data_inicio_aviso -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Data de Início do Aviso Prévio</span>
+                  </div>
+                  <input type="text" name="data_inicio_aviso" class="form-control"  value="{{ contrato.data_inicio_aviso|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+
+                  <!-- data_fim_aviso -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Data Final do Aviso</span>
+                  </div>
+                  <input type="text" name="data_fim_aviso" class="form-control"  value="{{ contrato.data_fim_aviso|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+                </div>
+
+                <div class="input-group mb-3">
+                  <!-- motivo -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Motivo</span>
+                  </div>
+                  {% render_field form.motivo class+="form-control" %}
+
+                </div>
+
+                <div class="input-group mb-3">
+                  <!-- data_demissao -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Data de Demissão</span>
+                  </div>
+                  <input type="text" name="data_demissao" class="form-control"  value="{{ contrato.data_demissao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+
+                  <!-- data_homologacao -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Data de Homologação</span>
+                  </div>
+                  <input type="text" name="data_homologacao" class="form-control"  value="{{ contrato.data_homologacao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+
+                    <!-- data_pagamento -->
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Data de Pagamento</span>
+                  </div>
+                  <input type="text" name="data_pagamento" class="form-control"  value="{{ contrato.data_pagamento|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+
+                </div>
+
+                <button class="btn btn-primary">Salvar</button>
+
+              </form>
             </div>
+              <div class="tab-pane fade show active" id="nav-beneficios" role="tabpanel" aria-labelledby="nav-beneficios-tab">
 
-            <!-- funcionario -->
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Funcionário</span>
+
+                 <h3>Lista de Benefícios</h3>
+                 <br>
+                 <ul>
+                 {% for beneficios_func in object.beneficios_func_set.all %}
+                    <li>
+                        <a> {{ beneficios_func.beneficio }} - Valor: {{ beneficios_func.valor }} - Status: {{ beneficios_func.status }} </a>
+                        <a href="{% url 'deleta_beneficios_func' pk=beneficios_func.id %}"
+                         <i class="fa fa-trash" style="font-size:20px;color:red"></i>
+                        </a>
+                      <br>
+                      <br>
+                    </li>
+                 {% endfor %}
+                 </ul>
+
+                 {% if object %}
+                 <a href="{% url 'create_beneficios_func' object.id %}?vnome={{ object.funcionario }}" class="btn btn-success">
+                    Adicionar Benefícios
+                 </a>
+                 {% endif %}
               </div>
-              {% render_field form.funcionario class+="form-control" %}
             </div>
-
-            <!-- contratado_por -->
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Contratado por</span>
-              </div>
-              {% render_field form.contratado_por class+="form-control" %}
-            </div>
-
-            <div class="input-group mb-3">
-              <!-- data_admissao -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Data de Admissão</span>
-              </div>
-              <input type="text" name="data_admissao" class="form-control"  value="{{ contrato.data_admissao|date:'d/m/Y'}}" id="dataini" onkeypress="$(this).mask('99/99/9999');">
-
-              <!-- data_registro -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Data de Registro</span>
-              </div>
-              <input type="text" name="data_registro" class="form-control"  value="{{ contrato.data_registro|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
-            </div>
-
-            <div class="input-group mb-3">
-              <!-- em_experiencia -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Em Experiência</span>
-              </div>
-              {% render_field form.em_experiencia class+="form-control" %}
-
-              <!-- prazo_experiencia -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Prazo Experiência</span>
-              </div>
-              <input onchange="calculaDataFin();" name="prazo_experiencia"  class="form-control" value="{{ contrato.prazo_experiencia}}" type="number" id="dias"  />
-
-              <!-- vencto_experiencia -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Vencimento</span>
-              </div>
-              <input type="text" name="vencto_experiencia" class="form-control"  value="{{ contrato.vencto_experiencia|date:'d/m/Y'}}" id="datafin" onkeypress="$(this).mask('99/99/9999');">
-            </div>
-
-            <div class="input-group mb-3">
-              <!-- optante_fgts -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Optante FGTS</span>
-              </div>
-              {% render_field form.optante_fgts class+="form-control" %}
-
-              <!-- data_opcao -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Data de Opção</span>
-              </div>
-              <input type="text" name="data_opcao" class="form-control"  value="{{ contrato.data_opcao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
-            </div>
-
-            <div class="input-group mb-3">
-              <!-- banco_depositario -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Banco Depositário</span>
-              </div>
-              {% render_field form.banco_depositario class+="form-control" %}
-
-              <!-- data_retratacao -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Data de Retratação</span>
-              </div>
-              <input type="text" name="data_retratacao" class="form-control"  value="{{ contrato.data_retratacao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
-            </div>
-
-            <div class="input-group mb-3">
-              <!-- funcao -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Função</span>
-              </div>
-              {% render_field form.funcao class+="form-control" %}
-
-              <!-- salario -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Salário</span>
-              </div>
-              {% render_field form.salario class+="form-control" %}
-
-            </div>
-
-            <div class="input-group mb-3">
-              <!-- data_inicio_aviso -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Data de Início do Aviso Prévio</span>
-              </div>
-              <input type="text" name="data_inicio_aviso" class="form-control"  value="{{ contrato.data_inicio_aviso|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
-
-              <!-- data_fim_aviso -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Data Final do Aviso</span>
-              </div>
-              <input type="text" name="data_fim_aviso" class="form-control"  value="{{ contrato.data_fim_aviso|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
-            </div>
-
-            <div class="input-group mb-3">
-              <!-- motivo -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Motivo</span>
-              </div>
-              {% render_field form.motivo class+="form-control" %}
-
-            </div>
-
-            <div class="input-group mb-3">
-              <!-- data_demissao -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Data de Demissão</span>
-              </div>
-              <input type="text" name="data_demissao" class="form-control"  value="{{ contrato.data_demissao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
-
-              <!-- data_homologacao -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Data de Homologação</span>
-              </div>
-              <input type="text" name="data_homologacao" class="form-control"  value="{{ contrato.data_homologacao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
-
-                <!-- data_pagamento -->
-              <div class="input-group-prepend">
-                <span class="input-group-text">Data de Pagamento</span>
-              </div>
-              <input type="text" name="data_pagamento" class="form-control"  value="{{ contrato.data_pagamento|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
-
-            </div>
-
-            <button class="btn btn-primary">Salvar</button>
-
-          </form>
+          </div>
           <br>
         </div>
       </div>

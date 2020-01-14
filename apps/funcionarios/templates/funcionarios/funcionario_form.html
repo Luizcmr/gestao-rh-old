@@ -347,19 +347,20 @@
               {% render_field form.num_decreto class+="form-control" %}
             </div>
 
-            <!-- salario -->
+            <!-- retirado a pedido
+            <&lt;!&ndash; salario &ndash;&gt;
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text">Salário</span>
               </div>
               {% render_field form.salario class+="form-control" %}
 
-              <!-- data_admissao -->
+              &lt;!&ndash; data_admissao &ndash;&gt;
               <div class="input-group-prepend">
                 <span class="input-group-text">Data Admissão</span>
               </div>
               <input type="text" name="data_admissao" class="form-control"  value="{{ funcionario.data_admissao|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
-            </div>
+            </div>-->
 
             <!-- funcao -->
             <div class="input-group mb-3">
@@ -420,7 +421,7 @@
                       <a href="{{ documento.arquivo.url }} "> {{ documento.descricao }} </a>
                       <a href="{% url 'deleta_documento' pk=documento.id %}"
                        <i class="fa fa-trash" style="font-size:20px;color:red"></i>
-                    </a>
+                      </a>
                     <br>
                     <br>
                   </li>

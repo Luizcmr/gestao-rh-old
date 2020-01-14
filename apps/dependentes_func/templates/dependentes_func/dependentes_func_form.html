@@ -48,6 +48,14 @@
               <input type="text" name="data_nasc" class="form-control"  value="{{ dependentes_func.data_nasc|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
             </div>
 
+            <!-- Paga Pensão -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Paga Pensão?</span>
+              </div>
+              {% render_field form.paga_pensao class+="form-control" %}
+            </div>
+
             <button class="btn btn-primary">Salvar</button>
           </form>
         </div>

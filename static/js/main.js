@@ -17,7 +17,7 @@ $("#id_empresa").change(function () {
 // Script para scrol nas tabelas
 $(document).ready(function () {
   $('#dtHorizontalVerticalExample').DataTable({
-    "order": [[ 3, "desc" ]],
+    "order": [[ 2, "desc" ]],
     "pagingType": "simple_numbers",
     "scrollX": true,
     "scrollY": 200,

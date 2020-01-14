@@ -15,7 +15,7 @@ class Empresa(models.Model):
     bairro = models.CharField(max_length=40, help_text='Bairro', null=True, blank=True )
     cidade = models.CharField(max_length=40, help_text='Cidade', null=True, blank=True )
     uf = models.CharField(max_length=2, help_text='UF', null=True, blank=True )
-    cep = models.CharField(max_length=7, help_text='CEP', null=True, blank=True )
+    cep = models.CharField(max_length=8, help_text='CEP', null=True, blank=True )
     telefones = models.CharField(max_length=40, help_text='Telefones', null=True, blank=True )
     email = models.CharField(max_length=100, help_text='Email', null=True, blank=True )
 

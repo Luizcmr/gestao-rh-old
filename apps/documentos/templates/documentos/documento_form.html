@@ -20,18 +20,39 @@
 
             <!-- Nome -->
             <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Descricao do Documento</span>
+              <div class="input-group-prepend col-md-12">
+                <span class="input-group-text">Descrição do Documento</span>
+
+              <input type="text" name="descricao" class="form-control"  value="{{ documento.descricao }}">
               </div>
-              {% render_field form.descricao class+="form-control" %}
             </div>
 
-            <!-- arquivo -->
-             <div class="input-group-prepend">
-                <span class="input-group-text">Arquivo</span>
-             </div>
+            <!-- data de entrega -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend col-md-6">
+                <span class="input-group-text">Data de Entrega</span>
+                <input type="text" name="data_entrega" class="form-control"  value="{{ documento.data_entrega|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
 
-             {% render_field form.arquivo  %}
+              </div>
+            </div>
+            <!-- data de vencimento -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend col-md-6">
+                <span class="input-group-text">Data de Vencimento</span>
+                <input type="text" name="data_vencimento" class="form-control"  value="{{ documento.data_vencimento|date:'d/m/Y'}}" onkeypress="$(this).mask('99/99/9999');">
+
+              </div>
+            </div>
+            <!-- arquivo -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend col-md-10">
+                <span class="input-group-text">Arquivo</span>
+
+                  <input name="arquivo" class="form-control" id="id_arquivo" required="" type="file">
+              </div>
+            </div>
+
+
              <br>
              <br>
              <button class="btn btn-primary">Salvar</button>

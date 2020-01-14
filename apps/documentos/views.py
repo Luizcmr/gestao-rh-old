@@ -6,7 +6,7 @@ from .models import Documento
 
 class DocumentoCreate(CreateView):
     model = Documento
-    fields = ['descricao', 'arquivo']
+    fields = ['descricao', 'arquivo', 'data_entrega','data_vencimento']
 
     def post(self, request, *args, **kwargs):
         form = self.get_form()

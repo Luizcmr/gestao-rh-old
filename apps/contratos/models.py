@@ -1,11 +1,13 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date, timedelta
 from django.contrib.auth.models import User
 
 from apps.empresas.models import Empresa
 from apps.funcoes.models import Funcao
 from apps.funcionarios.models import Funcionario
 from apps.movimentacoes.models import Movimentacao
+from apps.horarios.models import Horario
 
 # Criando model funcionario.
 class Contrato(models.Model):
@@ -36,6 +38,8 @@ class Contrato(models.Model):
    data_demissao = models.DateField(help_text="Data de Demissão", null=True, blank=True )
    data_homologacao = models.DateField(help_text="Data de Homologação", null=True, blank=True )
    data_pagamento = models.DateField(help_text="Data de Pagamento", null=True, blank=True )
+   horario = models.ForeignKey(Horario, on_delete=models.PROTECT, null=True, blank=True)
+   data_inicio_horario = models.DateField(help_text="Data de Início no Horário", null=True, blank=True )
    login = models.CharField(max_length=20, help_text="Motivo da Demissão", null=True, blank=True)
    data_mov = models.DateTimeField(auto_now_add=True, help_text="Data do Movimento")
    tipo_ope = models.CharField(max_length=1, help_text="Tipo de Operação", null=True, blank=True)
@@ -43,7 +47,7 @@ class Contrato(models.Model):
    class Meta:
        ordering = ['empresa','funcionario','data_lancamento']
 
-   def save(self, *args, **kwargs):
+   def save(self, *args, **kwargs ):
 
       # Atualizando dados do funcionario
       func = Funcionario.objects.filter(id=self.funcionario_id).update(salario=self.salario,
@@ -53,6 +57,23 @@ class Contrato(models.Model):
       wdata_admissao = self.data_admissao
       wdata_aviso = self.data_inicio_aviso
       wdata_demissao = self.data_demissao
+
+      if self.id != None and self.horario != None:
+         contratoant = Contrato.objects.get(id=self.id)
+         wdeschorarioant = contratoant.horario.descricao
+         whorarioant = contratoant.horario_id
+         wdatainicioant = contratoant.data_inicio_horario
+
+         if whorarioant != self.horario_id:
+            obs = "Horário Alterado de " + str(wdeschorarioant) + " para " + str(self.horario)
+            wdata_concluido = (self.data_inicio_horario-timedelta(1))
+            mov = Movimentacao.objects.create(funcionario=self.funcionario,
+                                              evento_id=8,
+                                              data_evento=self.data_inicio_horario,
+                                              data_para_conclusao=self.data_inicio_horario,
+                                              concluido_em=wdata_concluido,
+                                              observacao=obs
+                                             )
 
       if wdata_admissao is not None:
          movi_count = Movimentacao.objects.filter(evento=1, funcionario=self.funcionario_id).count()

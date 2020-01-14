@@ -2,11 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94d9c5b0-5a3c-4afe-9d2d-ff25f000582f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gestao_rh.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gestao_rh.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/funcionarios/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionarios/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contratos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/contratos/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contratos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/contratos/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_em_experiencia.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_em_experiencia.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contratos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/contratos/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contratos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/contratos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/departamentos/templates/departamentos/departamento_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/departamentos/templates/departamentos/departamento_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/dependentes_func/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/dependentes_func/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/dependentes_func/templates/dependentes_func/dependentes_func_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/dependentes_func/templates/dependentes_func/dependentes_func_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/dependentes_func/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/dependentes_func/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/documentos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/documentos/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/documentos/templates/documentos/documento_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/documentos/templates/documentos/documento_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/documentos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/documentos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/empresas/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/empresas/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/eventos/templates/eventos/evento_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/eventos/templates/eventos/evento_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionarios/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionarios/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/movimentacoes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/movimentacoes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/movimentacoes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/movimentacoes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/movimentacoes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/movimentacoes/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestao_rh/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gestao_rh/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestao_rh/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/gestao_rh/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-dev.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,31 +45,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/funcionarios/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/empresas/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22">
-              <folding>
-                <element signature="e#0#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,18 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>emai</find>
-      <find>empresa</find>
-      <find>list</find>
-      <find>data</find>
-      <find>Departamento</find>
-      <find>funcionario</find>
-      <find>show</find>
-      <find>showing</find>
-      <find>Showing</find>
-      <find>Exi</find>
-      <find>entries</find>
-      <find>exibin</find>
       <find>search</find>
       <find>search:</find>
       <find>Show</find>
@@ -81,11 +75,29 @@
       <find>Funcionario</find>
       <find>;;</find>
       <find>grey</find>
+      <find>Funcao</find>
+      <find>Departamento</find>
+      <find>funcoes.</find>
+      <find>Deneficio</find>
+      <find>funca</find>
+      <find>funcao</find>
+      <find>funcoes</find>
+      <find>Função</find>
+      <find>time</find>
+      <find>dependente</find>
+      <find>_func</find>
+      <find>wdeschorarioant</find>
     </findStrings>
     <replaceStrings>
       <replace>funcionario</replace>
       <replace>Evento</replace>
       <replace>Contrato</replace>
+      <replace>beneficios.</replace>
+      <replace>Beneficio</replace>
+      <replace>Horario</replace>
+      <replace>horarios</replace>
+      <replace>Horário</replace>
+      <replace>beneficio</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -95,57 +107,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/apps/movimentacoes/views.py" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/templates/403.html" />
-        <option value="$PROJECT_DIR$/templates/500.html" />
-        <option value="$PROJECT_DIR$/templates/400.html" />
-        <option value="$PROJECT_DIR$/apps/eventos/views.py" />
-        <option value="$PROJECT_DIR$/apps/empresas/views.py" />
-        <option value="$PROJECT_DIR$/apps/departamentos/views.py" />
-        <option value="$PROJECT_DIR$/apps/funcoes/views.py" />
-        <option value="$PROJECT_DIR$/static/js/main.js" />
-        <option value="$PROJECT_DIR$/static/js/addons/datatables.min.js" />
-        <option value="$PROJECT_DIR$/static/js/addons/datatables.js" />
-        <option value="$PROJECT_DIR$/gestao_rh/urls.py" />
-        <option value="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_list.html" />
-        <option value="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_list.html" />
-        <option value="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_form.html" />
-        <option value="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_confirm_delete.html" />
-        <option value="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_confirm_delete.html" />
-        <option value="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_transferir.html" />
-        <option value="$PROJECT_DIR$/apps/core/templates/core/index.html" />
-        <option value="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_confirm_delete.html" />
-        <option value="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_form.html" />
-        <option value="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_list.html" />
-        <option value="$PROJECT_DIR$/apps/departamentos/templates/departamentos/departamento_confirm_delete.html" />
-        <option value="$PROJECT_DIR$/apps/departamentos/templates/departamentos/departamento_form.html" />
-        <option value="$PROJECT_DIR$/apps/eventos/templates/eventos/evento_form.html" />
-        <option value="$PROJECT_DIR$/apps/eventos/templates/eventos/evento_confirm_delete.html" />
-        <option value="$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_form.html" />
-        <option value="$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_confirm_delete.html" />
-        <option value="$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_list.html" />
-        <option value="$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_form.html" />
-        <option value="$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_confirm_delete.html" />
-        <option value="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_list_em_experiencia.html" />
-        <option value="$PROJECT_DIR$/static/bootstrap/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_list.html" />
+        <option value="$PROJECT_DIR$/apps/beneficios/templates/tests.py" />
+        <option value="$PROJECT_DIR$/apps/beneficios/templates/urls.py" />
+        <option value="$PROJECT_DIR$/apps/beneficios/models.py" />
+        <option value="$PROJECT_DIR$/apps/beneficios/templates/beneficios/beneficio_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/apps/beneficios/templates/beneficios/beneficio_form.html" />
+        <option value="$PROJECT_DIR$/apps/beneficios/views.py" />
         <option value="$PROJECT_DIR$/apps/departamentos/templates/departamentos/departamento_list.html" />
+        <option value="$PROJECT_DIR$/static/js/main.js" />
+        <option value="$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_list.html" />
+        <option value="$PROJECT_DIR$/apps/beneficios/templates/beneficios/beneficio_list.html" />
         <option value="$PROJECT_DIR$/apps/eventos/templates/eventos/evento_list.html" />
-        <option value="$PROJECT_DIR$/apps/contratos/urls.py" />
-        <option value="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_em_experiencia.html" />
-        <option value="$PROJECT_DIR$/static/bootstrap/js/MascaraValidacao.js" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/apps/dependentes_func/admin.py" />
+        <option value="$PROJECT_DIR$/apps/funcionarios/models.py" />
+        <option value="$PROJECT_DIR$/apps/empresas/models.py" />
+        <option value="$PROJECT_DIR$/apps/dependentes_func/models.py" />
         <option value="$PROJECT_DIR$/apps/dependentes_func/views.py" />
         <option value="$PROJECT_DIR$/apps/dependentes_func/templates/dependentes_func/dependentes_func_form.html" />
-        <option value="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_form.html" />
-        <option value="$PROJECT_DIR$/apps/dependentes_func/models.py" />
-        <option value="$PROJECT_DIR$/apps/dependentes_func/templates/dependentes_func/Dependentes_func_confirm_delete.html" />
-        <option value="$PROJECT_DIR$/requirements-dev.txt" />
-        <option value="$PROJECT_DIR$/apps/contratos/views.py" />
+        <option value="$PROJECT_DIR$/apps/horarios/admin.py" />
+        <option value="$PROJECT_DIR$/apps/horarios/views.py" />
+        <option value="$PROJECT_DIR$/apps/horarios/templates/horarios/horario_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/apps/horarios/templates/horarios/horario_form.html" />
+        <option value="$PROJECT_DIR$/apps/horarios/models.py" />
+        <option value="$PROJECT_DIR$/apps/horarios/urls.py" />
+        <option value="$PROJECT_DIR$/apps/horarios/templates/horarios/horario_list.html" />
         <option value="$PROJECT_DIR$/apps/contratos/forms.py" />
-        <option value="$PROJECT_DIR$/apps/funcionarios/views.py" />
+        <option value="$PROJECT_DIR$/apps/movimentacoes/models.py" />
+        <option value="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_form.html" />
+        <option value="$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_form.html" />
+        <option value="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_list.html" />
+        <option value="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_list.html" />
+        <option value="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_list.html" />
+        <option value="$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_list.html" />
+        <option value="$PROJECT_DIR$/apps/beneficios_func/templates/beneficios_func/beneficios_func_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/apps/beneficios_func/admin.py" />
+        <option value="$PROJECT_DIR$/gestao_rh/settings.py" />
+        <option value="$PROJECT_DIR$/apps/beneficios_func/urls.py" />
+        <option value="$PROJECT_DIR$/gestao_rh/urls.py" />
+        <option value="$PROJECT_DIR$/apps/beneficios_func/templates/beneficios_func/beneficios_func_form.html" />
+        <option value="$PROJECT_DIR$/apps/beneficios_func/models.py" />
+        <option value="$PROJECT_DIR$/apps/beneficios_func/views.py" />
+        <option value="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_form.html" />
+        <option value="$PROJECT_DIR$/apps/contratos/models.py" />
+        <option value="$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_em_experiencia.html" />
+        <option value="$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/eventos_a_vencer.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/apps/contratos/urls.py" />
+        <option value="$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_a_vencer.html" />
+        <option value="$PROJECT_DIR$/apps/movimentacoes/urls.py" />
+        <option value="$PROJECT_DIR$/apps/movimentacoes/views.py" />
+        <option value="$PROJECT_DIR$/apps/contratos/views.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/requirements-dev.txt" />
       </list>
     </option>
   </component>
@@ -162,6 +174,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,30 +191,49 @@
               <item name="gestao-rh" type="b2602c69:ProjectViewProjectNode" />
               <item name="gestao-rh" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="empresas" type="462c0819:PsiDirectoryNode" />
+              <item name="contratos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gestao-rh" type="b2602c69:ProjectViewProjectNode" />
               <item name="gestao-rh" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="funcionarios" type="462c0819:PsiDirectoryNode" />
+              <item name="movimentacoes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestao-rh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestao-rh" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="movimentacoes" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestao-rh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestao-rh" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="movimentacoes" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="movimentacoes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gestao-rh" type="b2602c69:ProjectViewProjectNode" />
               <item name="gestao-rh" type="462c0819:PsiDirectoryNode" />
               <item name="gestao_rh" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gestao-rh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestao-rh" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/beneficios_func/templates/beneficios_func" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -213,17 +245,19 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\sistemas\python\gestao-rh\apps" />
-      <recent name="C:\sistemas\python\gestao-rh\apps\core" />
-      <recent name="C:\sistemas\python\gestao-rh\apps\documentos\templates\documentos" />
-      <recent name="C:\sistemas\python\gestao-rh\apps\funcionarios" />
-      <recent name="C:\sistemas\python\gestao-rh\apps\funcionarios\templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\sistemas\python\gestao-rh\apps\beneficios_func\templates\beneficios_func" />
+      <recent name="C:\sistemas\python\gestao-rh\apps\beneficios\templates\beneficios" />
+      <recent name="C:\sistemas\python\gestao-rh\beneficios" />
       <recent name="C:\sistemas\python\gestao-rh\apps\funcionarios\templates" />
       <recent name="C:\sistemas\python\gestao_rh\apps\empresas\templates\empresas" />
-      <recent name="C:\sistemas\python\gestao_rh\apps\departamentos\templates\departamentos" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\sistemas\python\gestao-rh\apps\beneficios_func" />
+      <recent name="C:\sistemas\python\gestao-rh\apps\beneficios_func\templates" />
+      <recent name="C:\sistemas\python\gestao-rh\apps" />
+      <recent name="C:\sistemas\python\gestao-rh\apps\beneficios" />
+      <recent name="C:\sistemas\python\gestao-rh\apps\core" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -267,7 +301,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\sistemas\python\gestao-rh\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\luizc\AppData\Local\Programs\Python\Python37-32\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -288,7 +322,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\sistemas\python\gestao-rh\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\luizc\AppData\Local\Programs\Python\Python37-32\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -470,20 +504,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26488096" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25520834" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2618658" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32242227" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5417349" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49925596" weight="0.30769232" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49925596" visible="true" weight="0.2487725" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50074404" side_tool="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -491,17 +524,17 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26488096" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26860118" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32242227" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5417349" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49925596" weight="0.30769232" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50074404" side_tool="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3289689" />
@@ -514,19 +547,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/apps/documentos/views.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/apps/dependentes_func/views.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/apps/contratos/models.py</url>
-          <line>76</line>
-          <option name="timeStamp" value="30" />
+          <url>file://$PROJECT_DIR$/apps/beneficios_func/views.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -537,13 +560,169 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/contratos/models.py" />
-    <entry file="file://$PROJECT_DIR$/apps/funcoes/views.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/forms/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="7531">
+          <caret line="457" selection-start-line="457" selection-end-line="457" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/contrib/auth/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2686">
+          <caret line="169" selection-start-line="169" selection-end-line="169" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/documentos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="54" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/documentos/templates/documentos/documento_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="45" selection-start-line="45" selection-end-line="52" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/beneficios/templates/beneficios/beneficio_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#i#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="54" column="35" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#2;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/beneficios_func/templates/beneficios_func/beneficios_func_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="57" lean-forward="true" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/beneficios_func/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/beneficios_func/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/beneficios_func/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/templates/dependentes_func/dependentes_func_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="21" column="48" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionarios/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1575">
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="457" column="28" selection-start-line="437" selection-start-column="17" selection-end-line="457" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionarios/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionarios/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionarios/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1570">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionarios/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/funcionarios/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -554,33 +733,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/bootstrap/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86598">
-          <caret line="5094" column="36" selection-start-line="5094" selection-start-column="36" selection-end-line="5094" selection-end-column="36" />
+        <state relative-caret-position="119">
+          <caret line="7" column="86" lean-forward="true" selection-start-line="7" selection-start-column="86" selection-end-line="7" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/addons/datatables.min.js" />
-    <entry file="file://$PROJECT_DIR$/static/css/style.css" />
-    <entry file="file://$PROJECT_DIR$/static/scss/addons/_datatables.scss" />
-    <entry file="file://$PROJECT_DIR$/static/js/addons/datatables.js" />
-    <entry file="file://$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_list.html" />
-    <entry file="file://$PROJECT_DIR$/apps/funcoes/templates/funcoes/funcao_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="57" lean-forward="true" selection-end-line="54" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/departamentos/models.py">
+    <entry file="file://$PROJECT_DIR$/apps/documentos/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -589,161 +752,219 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/departamentos/templates/departamentos/departamento_list.html">
+    <entry file="file://$PROJECT_DIR$/apps/documentos/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gestao_rh/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gestao_rh/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+          <folding>
+            <element signature="e#308#317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/beneficios_func/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/views/generic/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/eventos/templates/eventos/evento_list.html" />
-    <entry file="file://$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_em_experiencia.html" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/handlers/exception.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/utils/deprecation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/contrib/auth/mixins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.min.css" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/views/generic/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
           <caret line="70" selection-start-line="70" selection-end-line="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/migrations/0002_auto_20190517_1033.py" />
-    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/migrations/0001_initial.py" />
-    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/migrations/0003_dependentes_func_cpf.py" />
-    <entry file="file://$PROJECT_DIR$/gestao_rh/urls.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/core/handlers/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="69" lean-forward="true" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+        <state relative-caret-position="101">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="68" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="68" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/admin.py" />
-    <entry file="file://$PROJECT_DIR$/apps/funcionarios/admin.py">
+    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/bootstrap/js/MascaraValidacao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/templates/dependentes_func/dependentes_func_form.html" />
-    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/views.py" />
-    <entry file="file://$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_confirm_delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="5" selection-start-line="5" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/templates/dependentes_func/Dependentes_func_confirm_delete.html" />
-    <entry file="file://$PROJECT_DIR$/apps/dependentes_func/models.py" />
-    <entry file="file://$PROJECT_DIR$/apps/funcionarios/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="108" selection-start-line="108" selection-end-line="112" selection-end-column="21" />
+        <state relative-caret-position="-52">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_form.html">
+    <entry file="file://$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="448" column="25" lean-forward="true" selection-start-line="448" selection-start-column="25" selection-end-line="448" selection-end-column="25" />
+        <state relative-caret-position="101">
+          <caret line="198" column="132" selection-start-line="198" selection-start-column="132" selection-end-line="198" selection-end-column="132" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/contratos/migrations/0001_initial.py" />
-    <entry file="file://$PROJECT_DIR$/apps/contratos/migrations/0002_auto_20190524_1028.py" />
-    <entry file="file://$PROJECT_DIR$/apps/contratos/migrations/0003_auto_20190613_1426.py" />
-    <entry file="file://$PROJECT_DIR$/apps/contratos/migrations/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/requirements-dev.txt">
+    <entry file="file://$PROJECT_DIR$/apps/beneficios_func/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="68">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/beneficios_func/templates/beneficios_func/beneficios_func_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/beneficios_func/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/contratos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="30" selection-start-line="30" selection-end-line="34" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/movimentacoes/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_em_experiencia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1011">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="249">
+          <caret line="89" column="77" selection-start-line="89" selection-start-column="77" selection-end-line="89" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/contratos/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="96" selection-start-line="11" selection-start-column="96" selection-end-line="11" selection-end-column="96" />
           <folding>
-            <element signature="n#style#0;n#nav#0;n#head#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/movimentacoes/templates/movimentacoes/movimentacao_a_vencer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/movimentacoes/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="87" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/contratos/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2754">
+          <caret line="176" column="39" selection-start-line="176" selection-start-column="39" selection-end-line="176" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/movimentacoes/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/contratos/urls.py" />
-    <entry file="file://$PROJECT_DIR$/apps/contratos/templates/hr/funcionario_dropdown_list_options.html" />
-    <entry file="file://$PROJECT_DIR$/apps/contratos/templates/contratos/contrato_form.html" />
-    <entry file="file://$PROJECT_DIR$/static/js/main.js" />
-    <entry file="file://$PROJECT_DIR$/apps/contratos/forms.py" />
-    <entry file="file://$PROJECT_DIR$/apps/contratos/views.py" />
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/empresas/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <folding>
-            <element signature="e#0#82#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionarios/views.py">
+    <entry file="file://$PROJECT_DIR$/requirements-dev.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#82#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

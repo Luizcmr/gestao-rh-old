@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% load widget_tweaks %}
+
+{% block title %}Cadastro de Beneficios{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <form name="form" method="post" enctype="multipart/form-data">
+            <h5 class="card-title">Cadastro de Beneficios</h5>
+            <!-- Não se esqueça dessa tag -->
+            {% csrf_token %}
+
+            <!-- Nome -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nome do beneficio</span>
+              </div>
+              {% render_field form.beneficio class+="form-control" %}
+            </div>
+
+            <!-- Valor -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Valor do beneficio</span>
+              </div>
+              {% render_field form.valor class+="form-control" %}
+
+            </div>
+              <!-- status -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Status</span>
+              </div>
+              {% render_field form.status class+="form-control" %}
+            </div>
+
+            <button class="btn btn-primary">Salvar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

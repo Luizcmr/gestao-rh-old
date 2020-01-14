@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'apps.funcoes',
     'apps.documentos',
     'apps.eventos',
+    'apps.beneficios',
+    'apps.horarios',
     'apps.dependentes_func',
+    'apps.beneficios_func',
     'apps.contratos',
     'apps.movimentacoes',
     'apps.horas_extras',
@@ -115,6 +118,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
+
+TIME_INPUT_FORMATS = [ '%H:%M', ]
 
 LANGUAGE_CODE = 'pt-br'
 

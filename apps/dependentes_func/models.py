@@ -16,11 +16,17 @@ class Dependentes_func(models.Model):
         ('O', u'Outros'),
     )
 
+    SN_CHOICES = (
+        ('S', u'Sim'),
+        ('N', u'Não'),
+    )
+
     nome = models.CharField(max_length=50, help_text="Nome do dependente")
     parentesco = models.CharField(max_length=1, choices=PARENTESCO_CHOICES,  help_text="Grau de Parentesco", null=True, blank=True)
     data_nasc = models.DateField(help_text="emissao do pis", null=True, blank=True)
     funcionario = models.ForeignKey(Funcionario, on_delete=models.PROTECT)
     cpf = models.CharField(max_length=14, help_text="cpf do dependente", null=True, blank=True)
+    paga_pensao = models.CharField(max_length=1, choices=SN_CHOICES, help_text="Paga Pensão(S/N)", null=True, blank=True)
 
     def save(self, *args, **kwargs):
         self.cpf = chr_remove(self.cpf, ".-/")

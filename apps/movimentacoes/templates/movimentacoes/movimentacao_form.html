@@ -70,6 +70,17 @@
               <textarea id="observacao" name="observacao" rows="4" cols="80" >{{ movimentacao.observacao }}</textarea>
 
             </div>
+            <!-- arquivo -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend col-md-10">
+                <span class="input-group-text">Arquivo</span>
+
+                  <input name="arquivo_mov" class="form-control" id="id_arquivo_mov" type="file">
+              </div>
+              {% if movimentacao.arquivo_mov %}
+                <a href="{{ movimentacao.arquivo_mov.url }} " target="_blank"> Ver Documento </a>
+              {% endif %}
+            </div>
 
             <button class="btn btn-primary">Salvar</button>
 
